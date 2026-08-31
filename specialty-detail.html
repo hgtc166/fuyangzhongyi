@@ -258,6 +258,13 @@ button{font-family:inherit; cursor:pointer; border:none; background:none; color:
 .summary-row .pill{ font-size:13px; padding:6px 13px; border-radius:var(--r-pill); background:var(--cinnabar-tint); color:var(--cinnabar); font-weight:560 }
 .submit{ width:100%; min-height:52px; border-radius:var(--r-pill); font-size:16px; font-weight:680; color:#fff; background:linear-gradient(135deg,var(--cinnabar),color-mix(in srgb,var(--cinnabar) 70%, var(--gold))); box-shadow:var(--shadow-sm); transition:transform .2s var(--ease), opacity .2s }
 .submit:hover{ transform:translateY(-1px) }
+.book-note{ font-size:12.5px; color:var(--ink-3); line-height:1.65; margin:10px 0 14px; padding:10px 12px; border-radius:var(--r-sm); background:var(--cinnabar-tint); border:1px solid color-mix(in srgb,var(--cinnabar) 22%, transparent) }
+.book-note b{ color:var(--cinnabar); font-weight:700 }
+/* ============ 合规声明（全站统一） ============ */
+.site-foot{ margin-top:44px; padding:28px 0 52px; border-top:1px solid var(--hairline) }
+.site-foot-inner{ max-width:1080px; margin:0 auto; padding:0 clamp(18px,5vw,28px) }
+.site-foot-legal{ font-size:.82rem; color:var(--ink-3); line-height:1.85 }
+.site-foot-legal b{ color:var(--cinnabar); font-weight:700 }
 .submit:disabled{ opacity:.6; cursor:progress }
 .spinner{ width:20px; height:20px; border:2.5px solid rgba(255,255,255,.4); border-top-color:#fff; border-radius:50%; display:inline-block; animation:spin .7s linear infinite; vertical-align:-4px; margin-right:8px }
 @keyframes spin{ to{ transform:rotate(360deg) } }
@@ -416,8 +423,7 @@ button{font-family:inherit; cursor:pointer; border:none; background:none; color:
       <h3>一阳来复，寤寐与诸证并调</h3>
       <p>依脉证而立桂枝法、四逆法，为合并疾病制定共病同治、全周期调理方案。</p>
       <div class="cta-actions">
-        <button class="btn-solid" data-book>发起预约</button>
-        <button class="btn-ghost" data-consult>在线咨询</button>
+        <button class="btn-solid" data-book>预约到馆面诊</button>
       </div>
     </div>
   </section>
@@ -432,6 +438,13 @@ button{font-family:inherit; cursor:pointer; border:none; background:none; color:
   </details>
 
 </main>
+
+<!-- ============ 合规声明（全站统一） ============ -->
+<footer class="site-foot" aria-label="合规声明">
+  <div class="site-foot-inner">
+    <p class="site-foot-legal">本页面为扶阳中医馆专病展示与界面设计示意，仅作中医科普、机构与专家展示用途，<b>不构成诊断与治疗建议，不提供在线诊断、不开具处方</b>。预约表单仅用于预约到馆面诊，具体诊疗与处方须由执业医师在持有《医疗机构执业许可证》的实体机构内当面四诊合参后确定。本页面内容如涉及医疗服务或药品广告，将依法经广告审查取得批准文号，不宣传疗效、不作夸大或绝对化承诺。互联网医疗保健信息服务前置审批已依据《国务院关于第一批取消 62 项中央指定地方实施行政审批事项的决定》（国发〔2015〕57 号）取消，原《互联网医疗保健信息服务管理办法》（卫生部令第 66 号）已于 2016 年 1 月 19 日废止。如有不适，请及时至正规医疗机构就诊。</p>
+  </div>
+</footer>
 
 <!-- ============ 状态预览条 ============ -->
 <div class="statebar" role="group" aria-label="设计状态预览">
@@ -653,16 +666,17 @@ $("#themeBtn").addEventListener("click", ()=>{
    ============================================================ */
 const scrim = $("#scrim");
 function openBook(reason){
-  const sub = reason || "提交后医师将于 1 个工作日内与您联系。";
+  const sub = reason || "提交后工作人员将于 1 个工作日内与您电话确认到馆面诊时间。";
   const picks = selected.map(k=>`<span class="pill">${SPECIALTIES[k].name}</span>`).join("");
   $("#sheetContent").innerHTML = `
-    <h3 id="sheetT">预约 · ${SPECIALTIES[current].name}</h3>
+    <h3 id="sheetT">预约到馆面诊 · ${SPECIALTIES[current].name}</h3>
     <p class="sub">${sub}</p>
+    <p class="book-note">本表单仅用于预约到馆面诊，<b>不构成在线诊断或开具处方</b>。具体诊疗与处方须由执业医师在持有《医疗机构执业许可证》的实体机构内当面四诊合参后确定。</p>
     <div class="summary-row">${picks}</div>
     <form id="bookForm" novalidate>
       <div class="field"><label for="bkName">姓名</label><input id="bkName" name="name" placeholder="请输入您的称呼" required></div>
       <div class="field"><label for="bkPhone">手机号</label><input id="bkPhone" name="phone" inputmode="numeric" maxlength="11" placeholder="11 位手机号" required></div>
-      <div class="field"><label for="bkNote">补充（症状 / 共病 / 诉求）</label><textarea id="bkNote" placeholder="如：失眠合并高血糖，欲中西医结合调理"></textarea></div>
+      <div class="field"><label for="bkNote">补充（到馆面诊参考，如合并慢病 / 当前用药）</label><textarea id="bkNote" placeholder="如：失眠合并高血糖，欲中西医结合调理"></textarea></div>
       <button class="submit" type="submit" id="bkSubmit">提交预约</button>
     </form>`;
   scrim.classList.add("open"); scrim.setAttribute("aria-hidden","false");
@@ -695,7 +709,6 @@ function openBook(reason){
 }
 function closeBook(){ scrim.classList.remove("open"); scrim.setAttribute("aria-hidden","true"); }
 $$("[data-book]").forEach(b=>b.addEventListener("click", ()=>openBook()));
-$$("[data-consult]").forEach(b=>b.addEventListener("click", ()=>openBook("在线咨询将由扶阳医师在 24 小时内回复您。")));
 scrim.addEventListener("click", e=>{ if(e.target===scrim) closeBook(); });
 document.addEventListener("keydown", e=>{ if(e.key==="Escape" && scrim.classList.contains("open")) closeBook(); });
 
