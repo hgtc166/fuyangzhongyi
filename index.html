@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light" data-page-node-id="X6ayvHCE15k3H5cYFMTANj">
+<head data-page-node-id="4hy1P6Bsy7GCFtGGPdx1Ui">
+<meta charset="UTF-8" data-page-node-id="Qd6o3o8Qm1Yd8JWU3crAR4">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="qlVdWFO4bF6kycMvxguCxo">
+<meta name="description" content="扶阳中医馆——郑钦安扶阳医学研究中心。元阳为本，阳主阴从。睡眠/代谢/男科三大专病门诊，一人一方，共病同治。" data-page-node-id="JFuaDfuvdzELf81yEeCHX3">
+<title>扶阳中医馆 · 郑钦安扶阳医学研究中心</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="UuIfT2THGv27KJnVGSuc3U">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="4DvIm46XQctRSWWKmTFxrO">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" data-page-node-id="M2bOwAcwPBq4BOLAs7QXMn">
+<script src="shared-nav.js"></script>
+<style>
+/* ============================================================
+   扶阳中医馆官网 · 郑钦安扶阳医学研究中心
+   版本：v3.2.4（2026-08-31）· 顶部导航栏所有组件去边框统一（shared-nav.js：toggle/burger/search/results 均 border:0 + 透明背景）
+   美学：暖阳极简 × 坎卦图腾 | WarmSun 暖橙 Hex 体系 | 少文字多图形
+   历史：v2.5.0 起版本号记录于文件头与 CHANGELOG.md，可追溯
+   ============================================================ */
+
+:root{
+  /* ==========================================================
+     WarmSun 暖阳设计系统 · 规范层（对齐附件 warmsun-design-system v1.0）
+     ========================================================== */
+  /* 品牌色 Brand（暖阳橙 10 级） */
+  --brand-50:#FFF4EB; --brand-100:#FFE6D4; --brand-200:#FFCDA8; --brand-300:#FFAD78;
+  --brand-400:#FF8C42; --brand-500:#F2741B; --brand-600:#D85C12; --brand-700:#B2470F;
+  --brand-800:#8C380F; --brand-900:#6B2C0D;
+  /* 中性色 Neutral（暖调灰） */
+  --neutral-0:#FFFCF9; --neutral-100:#F2EBE2; --neutral-300:#D6C8B6;
+  --neutral-500:#998A74; --neutral-700:#5C5244; --neutral-900:#262019;
+  /* 语义色 Semantic */
+  --success:#2E9E6B; --warning:#E08A1E; --error:#D9533B; --info:#3E8E8A;
+  --accent-sage:#5CA99A;
+  /* 文本 / 背景 / 边框 */
+  --text-primary:#6B6155; --text-secondary:#6B6155; --text-tertiary:#998A74;
+  --bg:#FFFCF9; --line:#E5DDD0;
+  /* 字体族 */
+  --cjk:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  /* 阴影 3 档 */
+  --sh-sm:0 2px 4px rgba(42,29,15,.06);
+  --sh-md:0 4px 12px rgba(42,29,15,.08);
+  --sh-lg:0 12px 28px rgba(42,29,15,.12);
+
+  /* ==========================================================
+     兼容别名层（旧组件变量 → 规范层，保持组件代码零改动）
+     ========================================================== */
+  --paper:        var(--bg);
+  --paper-2:      var(--neutral-100);
+  --surface:      var(--neutral-0);
+  --ink:          var(--text-primary);
+  --ink-2:        var(--text-secondary);
+  --ink-3:        var(--text-tertiary);
+  --line-strong:  var(--neutral-300);
+  --cinnabar:     var(--brand-500);
+  --cinnabar-deep:var(--brand-600);
+  --cinnabar-soft:var(--brand-50);
+  --gold:         var(--brand-300);
+  --gold-soft:    var(--brand-100);
+  --ring:         rgba(242,116,27,.45);
+  --shadow-sm:    var(--sh-sm);
+  --shadow-md:    var(--sh-md);
+  --shadow-lg:    var(--sh-lg);
+
+  /* 渐变色系统（WarmSun 暖橙衔接：深→主→浅） */
+  --grad-bg:        radial-gradient(circle at 50% 0%, rgba(255,140,66,.13) 0%, transparent 55%);
+  --grad-brand:     linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 50%, var(--brand-300) 130%);
+  --grad-text:      linear-gradient(100deg, var(--brand-500) 0%, var(--brand-300) 100%);
+  --grad-hairline:  linear-gradient(90deg, var(--brand-500) 0%, var(--brand-300) 55%, transparent 100%);
+
+  /* sage 青绿点缀（WarmSun accent-sage 衍生：浅底/深字，随主题自适应） */
+  --sage-soft: color-mix(in oklch, var(--accent-sage) 15%, transparent);
+  --sage-deep: color-mix(in oklch, var(--accent-sage) 55%, var(--ink));
+
+  /* 字体（WarmSun：Noto Sans SC 主字体 + Roboto Mono 数值） */
+  --font-display: var(--cjk);
+  --font-body:    var(--cjk);
+  --font-mono:    var(--mono);
+
+  /* 字号阶梯（对齐 WarmSun 桌面基准，保留响应式 clamp） */
+  --fs-display: clamp(2.4rem, 7vw, 4.2rem);
+  --fs-h1:      clamp(1.6rem, 3.2vw, 2rem);
+  --fs-h2:      clamp(1.25rem, 2.2vw, 1.5rem);
+  --fs-h3:      1.125rem;
+  --fs-body:    1rem;
+  --fs-sm:      0.875rem;
+  --fs-xs:      0.8125rem;
+
+  /* 间距（WarmSun：4px 最小增量 · 8px 常用单位） */
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
+  --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px; --sp-9:96px;
+
+  --ease-out-quart: cubic-bezier(0.25,1,0.5,1);
+  --ease-out-expo: cubic-bezier(0.16,1,0.3,1);
+  --ease-in-out: cubic-bezier(0.65,0,0.35,1);
+
+  /* 圆角（WarmSun 六档：4/8/12/16/24/999；卡片 16px） */
+  --radius: 16px;
+  --radius-sm: 8px;
+  --nav-h: 62px;
+  --maxw: 1160px;
+}
+
+[data-theme="dark"]{
+  /* WarmSun 暗色令牌（暖褐底 · 品牌/语义提亮，对齐附件 05 章节） */
+  --brand-50:   rgba(255,140,66,.14);
+  --brand-100:  rgba(255,140,66,.14);
+  --brand-300:  #FFAD78;
+  --brand-400:  #FF8C42;
+  --brand-500:  #FF8C42;
+  --brand-600:  #FFAD78;
+  --neutral-0:  #1A1612;
+  --neutral-100:#221D18;
+  --neutral-300:#3A332A;
+  --neutral-500:#8A7E70;
+  --neutral-700:#C9BDB0;
+  --neutral-900:#F5F2EE;
+  --text-primary:#F5F2EE;
+  --text-secondary:#C9BDB0;
+  --text-tertiary:#8A7E70;
+  --bg:#1A1612;
+  --line:#3A332A;
+  --ring:rgba(255,140,66,.5);
+  --sh-sm:0 2px 4px rgba(0,0,0,.3);
+  --sh-md:0 4px 12px rgba(0,0,0,.35);
+  --sh-lg:0 12px 28px rgba(0,0,0,.45);
+  --grad-bg: radial-gradient(circle at 50% 0%, rgba(255,140,66,.09) 0%, transparent 55%);
+  /* WarmSun 暗色语义值（对齐附件 05：success/warning/error/info 提亮） */
+  --success:#4CC38A; --warning:#F0A93B; --error:#F0775E; --info:#5BBDB8;
+  --accent-sage:#6FC4B4;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);font-size:var(--fs-body);line-height:1.6;
+  letter-spacing:0.01em;color:var(--ink);background:var(--paper);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  transition:background-color .3s var(--ease-in-out),color .3s var(--ease-in-out);
+  overflow-x:hidden;
+}
+::selection{background:var(--cinnabar);color:#fff}
+a{color:inherit;text-decoration:none}
+img,video,canvas{display:block;max-width:100%;height:auto}
+svg{max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:1rem;color:inherit}
+:focus-visible{outline:2px solid var(--cinnabar);outline-offset:3px;border-radius:4px}
+h1,h2,.display{font-family:var(--font-display);font-weight:700;letter-spacing:-0.01em;line-height:1.25}
+h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.01em;line-height:1.3}
+
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--cinnabar);color:#fff;padding:10px 20px;z-index:200;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
+
+.container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--sp-6)}
+.section{padding-block:clamp(4rem,9vw,7.5rem);position:relative}
+.sec-head{max-width:720px;margin-inline:auto;margin-bottom:clamp(3rem,6vw,5rem);text-align:center}
+.eyebrow{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:var(--fs-xs);letter-spacing:0.32em;color:var(--cinnabar);font-weight:600;text-transform:uppercase;margin-bottom:var(--sp-4)}
+.eyebrow::before{content:"";width:20px;height:1px;background:var(--cinnabar)}
+.sec-title{font-size:var(--fs-h1);margin-bottom:var(--sp-3)}
+.sec-desc{color:var(--ink-2);font-size:var(--fs-sm);max-width:52ch;margin-inline:auto;line-height:1.85}
+
+/* ============ 导航 ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;background:color-mix(in oklch,var(--paper) 84%,transparent);backdrop-filter:saturate(1.3) blur(14px);-webkit-backdrop-filter:saturate(1.3) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.is-scrolled{border-bottom-color:var(--line)}
+.nav-inner{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--sp-6);display:flex;align-items:center;gap:var(--sp-6);height:100%}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-seal{width:38px;height:38px;border-radius:var(--radius-sm);background:var(--grad-brand);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:19px;box-shadow:var(--shadow-sm);flex-shrink:0}
+.brand-name{font-family:var(--font-display);font-weight:600;font-size:1.05rem;line-height:1.2;letter-spacing:0.04em}
+.brand-sub{font-size:var(--fs-xs);color:var(--ink-3);letter-spacing:0.2em}
+.nav-links{display:flex;align-items:center;gap:var(--sp-2);margin-inline:auto}
+.nav-links a{position:relative;padding:8px 13px;font-size:var(--fs-sm);color:var(--ink-2);border-radius:8px;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a[aria-current="true"]{color:var(--cinnabar);font-weight:600}
+.nav-actions{display:flex;align-items:center;gap:var(--sp-3);flex-shrink:0}
+
+/* 全站搜索框 */
+.nav-search{position:relative;display:flex;align-items:center;gap:7px;height:38px;width:210px;padding:0 11px;border:1px solid var(--line);border-radius:var(--radius-sm);background:color-mix(in oklch,var(--paper-2) 65%,transparent);transition:border-color .2s,box-shadow .2s}
+.nav-search:focus-within{border-color:var(--cinnabar);box-shadow:0 0 0 3px var(--ring)}
+.ns-ic{width:16px;height:16px;flex-shrink:0;color:var(--ink-3);pointer-events:none}
+.ns-input{flex:1;min-width:0;border:0;background:transparent;outline:none;font-size:var(--fs-sm);color:var(--ink);font-family:inherit}
+.ns-input::placeholder{color:var(--ink-3)}
+.ns-clear{border:0;background:transparent;color:var(--ink-3);font-size:21px;line-height:1;cursor:pointer;padding:0 2px;flex-shrink:0}
+.ns-clear:hover{color:var(--ink)}
+.ns-results{position:absolute;top:calc(100% + 8px);right:0;width:min(360px,84vw);max-height:62vh;overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-md);padding:6px;z-index:200}
+.ns-item{display:flex;flex-direction:column;gap:2px;width:100%;text-align:left;border:0;background:transparent;padding:9px 10px;border-radius:8px;cursor:pointer}
+.ns-item:hover,.ns-item:focus-visible{background:color-mix(in oklch,var(--cinnabar) 12%,transparent);outline:none}
+.ns-sec{font-size:var(--fs-xs);color:var(--cinnabar);letter-spacing:.04em}
+.ns-title{font-size:var(--fs-sm);color:var(--ink-2);line-height:1.4}
+.ns-empty{padding:14px 10px;font-size:var(--fs-sm);color:var(--ink-3);text-align:center}
+.search-hit{animation:searchHit 1.8s ease}
+@keyframes searchHit{0%{box-shadow:0 0 0 3px var(--ring);background:color-mix(in oklch,var(--cinnabar) 12%,transparent)}100%{box-shadow:0 0 0 0 transparent;background:transparent}}
+.theme-toggle{width:40px;height:40px;border-radius:var(--radius-sm);display:grid;place-items:center;color:var(--ink-2);transition:background .2s,color .2s}
+.theme-toggle:hover{background:var(--paper-2);color:var(--ink)}
+.theme-toggle svg{width:19px;height:19px}
+[data-theme="light"] .theme-toggle .icon-moon{display:none}
+[data-theme="dark"] .theme-toggle .icon-sun{display:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:12px 24px;border-radius:var(--radius-sm);font-size:var(--fs-sm);font-weight:600;line-height:1;letter-spacing:0.02em;white-space:nowrap;transition:transform .15s var(--ease-out-quart),box-shadow .15s,background-color .15s,border-color .15s}
+.btn:active{transform:scale(0.97)}
+.btn-primary{background:var(--brand-500);color:#fff;border:none}
+.btn-primary:hover{background:var(--brand-600);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--cinnabar);color:var(--cinnabar);transform:translateY(-1px)}
+.btn-lg{padding:15px 32px;font-size:1rem}
+.btn-sm{padding:9px 16px}
+.burger{display:none;width:42px;height:42px;border-radius:var(--radius-sm);place-items:center;color:var(--ink)}
+.burger:hover{background:var(--paper-2)}
+.burger svg{width:22px;height:22px}
+
+.mobile-menu{position:fixed;top:var(--nav-h);left:0;right:0;z-index:99;background:var(--paper);border-bottom:1px solid var(--line);padding:var(--sp-4) var(--sp-6) var(--sp-6);display:none;flex-direction:column;gap:4px;box-shadow:var(--shadow-md)}
+.mobile-menu.open{display:flex;animation:fadeIn .25s var(--ease-out-quart)}
+.mobile-menu a{padding:14px 8px;font-size:1rem;border-bottom:1px solid var(--line);color:var(--ink)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a[aria-current="true"]{color:var(--cinnabar)}
+
+/* ============ Hero（暖色氛围 · 借鉴 nxcode 动效手法） ============ */
+.hero{
+  min-height:100vh;min-height:100svh;display:flex;align-items:center;
+  position:relative;padding-top:var(--nav-h);overflow:hidden;
+  background:var(--grad-bg),var(--paper);
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+/* 流动光晕（CSS 关键帧缓慢漂移，替代背景视频）低强度辅助氛围 */
+.hero-glow{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.hero-glow.g1{width:52vw;height:52vw;top:-22%;right:-16%;background:radial-gradient(circle,color-mix(in oklch,var(--cinnabar) 13%,transparent),transparent 68%);animation:glowDrift1 20s var(--ease-in-out) infinite}
+.hero-glow.g2{width:38vw;height:38vw;bottom:-20%;left:-14%;background:radial-gradient(circle,color-mix(in oklch,var(--gold) 15%,transparent),transparent 68%);animation:glowDrift2 26s var(--ease-in-out) infinite}
+@keyframes glowDrift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-7%,9%) scale(1.12)}}
+@keyframes glowDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(9%,-7%) scale(1.1)}}
+/* 坎卦背景图腾（低不透明度 · 平铺纹理，尺寸≈标题字） */
+.hero-trigram-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.045}
+.hero-trigram-bg svg{display:block;width:100%;height:100%}
+.hero-trigram-bg .yin{fill:var(--ink-2)}
+.hero-trigram-bg .yang{fill:var(--cinnabar)}
+/* 内容层：三行网格（标题居上三分之一 · CTA 居下三分之一） */
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-rows:1fr auto 1fr;width:100%;max-width:var(--maxw);height:calc(100vh - var(--nav-h));height:calc(100svh - var(--nav-h));margin-inline:auto;padding-inline:var(--sp-6)}
+.hero-copy{text-align:center;max-width:820px;margin-inline:auto;grid-row:1;align-self:end;padding-bottom:var(--sp-5)}
+.hero-title{font-size:var(--fs-display);line-height:1.05;color:var(--ink)}
+.hero-title .zh{background:var(--grad-text);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+.hero-title .zh-plain{color:var(--ink);background:none;-webkit-text-fill-color:currentColor;animation:none}
+.hero-ctas{display:flex;gap:var(--sp-3);flex-wrap:wrap;justify-content:center;grid-row:3;align-self:start;padding-top:var(--sp-5)}
+.hero-ctas .btn-primary svg{transition:transform .3s var(--ease-out-quart)}
+.hero-ctas .btn-primary:hover svg{transform:translateX(3px)}
+/* hero-card 相关样式已随右栏卡片移除（hero 改为单栏极简） */
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink-3);font-size:var(--fs-xs);letter-spacing:0.2em}
+.scroll-hint .mouse{width:22px;height:36px;border:1.5px solid var(--line-strong);border-radius:12px;position:relative}
+.scroll-hint .mouse::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3px;height:7px;border-radius:2px;background:var(--cinnabar);animation:wheel 1.8s var(--ease-out-quart) infinite}
+@keyframes wheel{0%{opacity:1;transform:translate(-50%,0)}70%{opacity:0;transform:translate(-50%,12px)}100%{opacity:0}}
+
+/* ============ 元阳为本 ============ */
+/* ============ 板块交替底色（米色暖底 ↔ 纯白底 · 深浅间隔） ============ */
+#theory,#lineage,#wellness{background:var(--grad-bg),var(--paper-2)}
+#dept,#method,#faq{background:var(--paper)}
+.theory{overflow:hidden}
+.theory-hero{text-align:center;max-width:760px;margin:0 auto clamp(2rem,4vw,3.2rem)}
+.theory-title{font-size:clamp(1.3rem,5vw,4.4rem);line-height:1.1;margin-bottom:var(--sp-4);white-space:nowrap;letter-spacing:-.01em}
+.theory-title .zh{background:var(--grad-text);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
+.theory-sub{color:var(--ink-2);font-size:var(--fs-sm);letter-spacing:0.02em;max-width:62ch;margin-inline:auto;line-height:1.9}
+/* ============ 学术渊源 · 传承时间轴 ============ */
+.lineage-axis{max-width:min(820px,100%);margin:clamp(38px,5vw,58px) auto 0}
+.axis-list{list-style:none;margin:0;padding:0;position:relative}
+.axis-list::before{content:"";position:absolute;left:96px;top:8px;bottom:22px;width:2px;background:linear-gradient(var(--brand-300),var(--brand-100));border-radius:2px}
+.axis-item{position:relative;padding:0 0 clamp(20px,3vw,28px) 112px}
+.axis-year{position:absolute;left:0;top:1px;width:80px;text-align:right;font-family:var(--font-mono);font-size:.96rem;font-weight:700;color:var(--brand-600);letter-spacing:.02em}
+.axis-node{position:absolute;left:90px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--brand-500);box-shadow:0 0 0 4px var(--brand-50);z-index:1;box-sizing:border-box}
+.axis-body{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px}
+.axis-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--ink);display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px}
+.axis-role{font-size:.8rem;font-weight:500;color:var(--accent-sage);letter-spacing:.04em}
+.axis-desc{font-size:var(--fs-sm);line-height:1.85;color:var(--ink);margin-top:8px}
+.axis-key .axis-node{background:var(--brand-500);border-color:var(--brand-600);box-shadow:0 0 0 5px var(--brand-100)}
+.axis-key .axis-body{border-color:var(--brand-300);background:linear-gradient(135deg,var(--brand-50),var(--paper-2))}
+.axis-key .axis-year{color:var(--brand-700)}
+.axis-key .axis-name{font-size:1.25rem}
+@media (max-width:560px){
+  .axis-list::before{left:70px}
+  .axis-item{padding-left:86px}
+  .axis-year{width:56px;font-size:.82rem}
+  .axis-node{left:64px}
+}
+
+/* ============ 经典法度（图标卡片） ============ */
+.method-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-5);max-width:820px;margin-inline:auto}
+.method-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-6);text-align:center;transition:transform .25s var(--ease-out-quart),box-shadow .25s,border-color .25s}
+.method-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--line-strong)}
+.method-card .m-ic{width:56px;height:56px;border-radius:12px;background:var(--cinnabar-soft);color:var(--cinnabar);display:grid;place-items:center;margin:0 auto var(--sp-4)}
+.method-card .m-ic svg{width:26px;height:26px}
+.method-card h3{font-size:var(--fs-h2);margin-bottom:var(--sp-2)}
+.method-card .m-sub{color:var(--cinnabar);font-size:var(--fs-sm);font-weight:600;margin-bottom:var(--sp-3)}
+.method-card p{color:var(--ink-2);font-size:var(--fs-sm);line-height:1.8;max-width:30ch;margin-inline:auto}
+
+/* ============ 三大专病（截图式症状矩阵 + 动效） ============ */
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-5);perspective:1000px}
+.spec-grid .spec-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-6);position:relative;overflow:hidden;transform-style:preserve-3d;
+  opacity:0;transform:translateY(24px) scale(.96);
+  transition:opacity .6s var(--ease-out-quart),transform .6s var(--ease-out-quart),box-shadow .3s var(--ease-out-quart),border-color .3s var(--ease-out-quart)}
+.spec-grid .spec-card.in{opacity:1;transform:none}
+.spec-grid .spec-card:nth-child(1){transition-delay:0s}
+.spec-grid .spec-card:nth-child(2){transition-delay:.1s}
+.spec-grid .spec-card:nth-child(3){transition-delay:.2s}
+.spec-grid .spec-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-hairline);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-out-quart);z-index:3}
+.spec-grid .spec-card::after{content:"";position:absolute;top:-50%;right:-30%;width:200px;height:200px;background:radial-gradient(circle,color-mix(in oklch,var(--cinnabar) 22%,transparent),transparent 70%);opacity:0;transition:opacity .4s var(--ease-out-quart);pointer-events:none;z-index:0}
+.spec-grid .spec-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:var(--shadow-md);border-color:color-mix(in oklch,var(--cinnabar) 45%,var(--line));transition:transform .15s var(--ease-out-quart),box-shadow .3s var(--ease-out-quart),border-color .3s var(--ease-out-quart)}
+.spec-grid .spec-card:hover::before{transform:scaleX(1)}
+.spec-grid .spec-card:hover::after{opacity:1}
+.spec-grid .spec-card>*{position:relative;z-index:1}
+.spec-card h3{font-size:var(--fs-h2);color:var(--cinnabar);margin-bottom:2px;letter-spacing:-.01em}
+.spec-sub{font-size:var(--fs-xs);color:var(--ink-3);margin-bottom:var(--sp-5);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.spec-icons{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:var(--sp-5)}
+.spec-icon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;aspect-ratio:1;padding:10px 4px;background:color-mix(in oklch,var(--paper-2) 70%,transparent);border:1px solid var(--line);border-radius:12px;font-size:var(--fs-xs);color:var(--ink-2);text-align:center;transition:background .3s var(--ease-out-quart),border-color .3s var(--ease-out-quart),transform .3s var(--ease-out-quart),color .3s var(--ease-out-quart),box-shadow .3s var(--ease-out-quart)}
+.spec-icon svg{width:22px;height:22px;color:var(--ink-2);transition:transform .3s var(--ease-out-quart),color .3s var(--ease-out-quart)}
+.spec-icon:hover{background:linear-gradient(135deg,var(--cinnabar),color-mix(in oklch,var(--cinnabar) 72%,#000));color:#fff;border-color:color-mix(in oklch,var(--cinnabar) 60%,transparent);transform:scale(1.08) translateY(-2px);box-shadow:0 8px 22px color-mix(in oklch,var(--cinnabar) 30%,transparent)}
+.spec-icon:hover svg{transform:scale(1.15);color:#fff}
+.spec-count{display:flex;align-items:center;justify-content:space-between;font-size:var(--fs-sm);color:var(--ink-3);padding-top:var(--sp-4);border-top:1px solid var(--line)}
+.spec-count strong{color:var(--cinnabar);font-size:1.4rem;font-family:var(--font-mono);font-weight:700;margin-right:2px}
+.spec-arrow{display:inline-flex;align-items:center;gap:4px;color:var(--gold);font-weight:600;transition:transform .3s var(--ease-out-quart),color .3s var(--ease-out-quart)}
+.spec-card:hover .spec-arrow{transform:translateX(6px);color:var(--cinnabar)}
+
+/* ============ 养生（图标卡片·四象限） ============ */
+.well-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-5)}
+.well-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-6);transition:transform .25s var(--ease-out-quart),box-shadow .25s}
+.well-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.well-card .w-ic{width:50px;height:50px;border-radius:50%;background:var(--sage-soft);color:var(--accent-sage);display:grid;place-items:center;margin-bottom:var(--sp-4)}
+.well-card .w-ic svg{width:24px;height:24px}
+.well-card h3{font-size:var(--fs-h3);margin-bottom:var(--sp-2)}
+.well-card .w-time{color:var(--accent-sage);font-size:var(--fs-xs);font-weight:600;letter-spacing:0.08em;margin-bottom:var(--sp-3)}
+.well-card p{color:var(--ink-2);font-size:var(--fs-sm);line-height:1.85}
+
+/* ============ FAQ ============ */
+.faq-list{max-width:820px;margin-inline:auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;padding:var(--sp-5) 0;display:flex;align-items:center;gap:var(--sp-4);font-size:1.02rem;font-weight:600;font-family:var(--font-display);letter-spacing:0}
+.faq-q .faq-ic{margin-left:auto;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;border:1px solid var(--line-strong);flex-shrink:0;transition:transform .3s var(--ease-in-out),background .3s,color .3s}
+.faq-q .faq-ic svg{width:14px;height:14px}
+.faq-item.open .faq-ic{transform:rotate(45deg);background:var(--cinnabar);border-color:var(--cinnabar);color:#fff}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s var(--ease-in-out)}
+.faq-a>div{overflow:hidden}
+.faq-a-inner{padding-bottom:var(--sp-5);color:var(--ink-2);font-size:var(--fs-sm);line-height:1.9;max-width:70ch}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+
+/* ============ 语义标签 Tag（WarmSun 04 组件规范） ============ */
+.tag{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;font-family:var(--font-body)}
+.tag .d{width:8px;height:8px;border-radius:50%}
+.tag.success{background:#E3F5EC;color:#1E7A4F}.tag.success .d{background:var(--success)}
+.tag.warning{background:#FBEFD8;color:#B86800}.tag.warning .d{background:var(--warning)}
+.tag.error{background:#FBE6E1;color:#A3361F}.tag.error .d{background:var(--error)}
+.tag.info{background:#DCF1EF;color:#2A6B65}.tag.info .d{background:var(--info)}
+.tag.brand{background:var(--brand-50);color:var(--brand-700)}.tag.brand .d{background:var(--brand-500)}
+
+/* ============ 页脚 ============ */
+.footer{border-top:1px solid var(--line);padding-block:var(--sp-7)}
+.footer-inner{display:grid;grid-template-columns:auto 1fr auto;gap:var(--sp-6);align-items:center}
+.footer p{font-size:var(--fs-xs);color:var(--ink-3);line-height:1.7;max-width:72ch}
+.footer-legal{white-space:nowrap;max-width:none}
+.footer-qr{display:flex;gap:var(--sp-5);align-items:flex-start}
+.qr-item{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.qr-item img{width:116px;height:116px;border-radius:var(--radius-sm);background:#fff;padding:6px;border:1px solid var(--line);display:block;transition:transform .25s var(--ease-out-quart),box-shadow .25s}
+.qr-item:hover img{transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-md)}
+.qr-item figcaption{font-size:12px;color:var(--ink-3);letter-spacing:0.05em;line-height:1.4}
+/* 预约二维码弹窗 */
+.qr-modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:var(--sp-5)}
+.qr-modal[hidden]{display:none}
+.qr-overlay{position:absolute;inset:0;background:rgba(26,22,18,.55);backdrop-filter:blur(4px);animation:fadeIn .3s var(--ease-out-quart)}
+.qr-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-6);text-align:center;max-width:320px;width:100%;box-shadow:var(--shadow-lg);animation:pop .35s var(--ease-out-quart)}
+.qr-card img{width:180px;height:180px;border-radius:var(--radius-sm);background:#fff;padding:6px;border:1px solid var(--line);margin-bottom:var(--sp-4)}
+.qr-card h3{font-size:var(--fs-h3);margin-bottom:var(--sp-2)}
+.qr-card p{font-size:var(--fs-xs);color:var(--ink-3);line-height:1.8}
+.qr-close{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ink-3);font-size:1.2rem;line-height:1;background:transparent;border:none;cursor:pointer;transition:background .2s,color .2s}
+.qr-close:hover{background:var(--paper-2);color:var(--ink)}
+@keyframes pop{from{opacity:0;transform:scale(.92) translateY(8px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ============ 专病详情弹窗（集成设计方案 · 复用跳转逻辑） ============ */
+.spd-modal{position:fixed;inset:0;z-index:400;display:grid;place-items:center;padding:var(--sp-5)}
+.spd-modal[hidden]{display:none}
+.spd-overlay{position:absolute;inset:0;background:rgba(26,22,18,.55);backdrop-filter:blur(6px);animation:fadeIn .3s var(--ease-out-quart)}
+.spd-panel{position:relative;display:flex;flex-direction:column;width:min(680px,100%);max-height:90vh;overflow-y:auto;background:var(--surface);border:1px solid var(--line);border-radius:calc(var(--radius) + 6px);box-shadow:var(--shadow-lg);animation:spdPop .4s var(--ease-out-expo);-webkit-overflow-scrolling:touch}
+@keyframes spdPop{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+.spd-close{position:sticky;top:0;align-self:flex-end;margin:var(--sp-3) var(--sp-3) 0;width:36px;height:36px;flex:none;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;line-height:1;color:var(--ink-3);background:var(--paper-2);border:1px solid var(--line);cursor:pointer;transition:background .2s,color .2s,transform .25s;z-index:6}
+.spd-close:hover{background:var(--brand-50);color:var(--cinnabar);transform:rotate(90deg)}
+.spd-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.spd-hero{padding:var(--sp-6) var(--sp-6) var(--sp-5);background:linear-gradient(160deg,var(--brand-50),transparent 72%);border-bottom:1px solid var(--line)}
+.spd-eyebrow{font-family:var(--font-mono);font-size:var(--fs-xs);letter-spacing:.2em;color:var(--brand-600);text-transform:uppercase}
+.spd-name{font-size:clamp(1.5rem,4vw,2rem);font-weight:700;margin:6px 0 4px;color:var(--ink)}
+.spd-tag{color:var(--brand-700);font-size:var(--fs-body);font-weight:500}
+.spd-stats{display:flex;gap:var(--sp-5);margin-top:var(--sp-5);flex-wrap:wrap}
+.spd-stat{display:flex;flex-direction:column}
+.spd-stat strong{font-family:var(--font-mono);font-size:1.6rem;color:var(--cinnabar);line-height:1}
+.spd-stat span{font-size:var(--fs-xs);color:var(--ink-3);margin-top:4px}
+.spd-sec{padding:var(--sp-5) var(--sp-6);border-bottom:1px solid var(--line)}
+.spd-h3{font-size:var(--fs-h3);font-weight:700;margin-bottom:var(--sp-3);color:var(--ink);display:flex;align-items:center;gap:8px}
+.spd-h3::before{content:"";width:4px;height:1.1em;background:var(--grad-hairline);border-radius:2px}
+.spd-phil{font-size:var(--fs-body);line-height:1.85;color:var(--ink)}
+.spd-phil .em{color:var(--brand-600);font-weight:600;font-style:normal;border-bottom:1px solid var(--brand-200)}
+.spd-mech{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--sp-4)}
+.spd-chip{font-size:var(--fs-sm);padding:6px 12px;border-radius:999px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink);line-height:1.4}
+.spd-chip--mech{background:var(--sage-soft);border-color:color-mix(in oklch,var(--accent-sage) 30%,var(--line));color:var(--sage-deep)}
+.spd-ind{display:flex;flex-wrap:wrap;gap:8px}
+.spd-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3)}
+.spd-feat{display:flex;gap:12px;padding:var(--sp-3);border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface)}
+.spd-feat svg{width:26px;height:26px;flex:none;color:var(--brand-500);margin-top:2px}
+.spd-feat h5{font-size:var(--fs-sm);font-weight:700;color:var(--ink);margin-bottom:3px}
+.spd-feat p{font-size:var(--fs-xs);color:var(--ink-3);line-height:1.6}
+.spd-fit{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4)}
+.spd-fit-col h4{font-size:var(--fs-sm);font-weight:700;margin-bottom:var(--sp-2);display:flex;align-items:center;gap:6px}
+.spd-fit-yes h4{color:var(--success)}
+.spd-fit-no h4{color:var(--warning)}
+.spd-fit-col ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.spd-fit-col li{font-size:var(--fs-xs);color:var(--ink-2);line-height:1.5;padding-left:16px;position:relative}
+.spd-fit-yes li::before{content:"✓";position:absolute;left:0;color:var(--success);font-weight:700}
+.spd-fit-no li::before{content:"!";position:absolute;left:0;color:var(--warning);font-weight:700}
+.spd-co{display:flex;flex-direction:column;gap:var(--sp-3)}
+.spd-co-card{padding:var(--sp-4);border:1px solid var(--line);border-radius:var(--radius-sm);background:linear-gradient(160deg,var(--brand-50),transparent 80%);border-left:3px solid var(--brand-500)}
+.spd-co-card h5{font-size:var(--fs-sm);font-weight:700;color:var(--ink);margin-bottom:6px}
+.spd-co-desc{font-size:var(--fs-xs);color:var(--ink-2);line-height:1.7}
+.spd-co-toggle{margin-top:var(--sp-2);background:none;border:none;color:var(--brand-600);font-size:var(--fs-xs);font-weight:600;cursor:pointer;padding:0;font-family:inherit}
+.spd-co-syn{margin-top:var(--sp-2);padding:var(--sp-3);border-radius:var(--radius-sm);background:var(--surface);border:1px dashed var(--line);font-size:var(--fs-xs);color:var(--ink-2);line-height:1.7}
+.spd-co-tag{display:inline-block;font-size:10px;letter-spacing:.1em;color:var(--brand-600);background:var(--brand-50);border-radius:999px;padding:2px 8px;margin-right:6px}
+.spd-cta{padding:var(--sp-5) var(--sp-6) var(--sp-6);display:flex;flex-direction:column;gap:var(--sp-3)}
+.spd-btn{font-family:inherit;font-size:var(--fs-body);font-weight:600;padding:14px 20px;border-radius:var(--radius-sm);border:1px solid transparent;cursor:pointer;transition:transform .15s var(--ease-out-quart),box-shadow .25s,background .25s}
+.spd-btn--primary{background:var(--grad-brand);color:#fff;box-shadow:var(--shadow-md)}
+.spd-btn--primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.spd-note{font-size:var(--fs-xs);color:var(--ink-3);text-align:center;line-height:1.6}
+/* —— 专病详情扩展区块（定义/机制/症状/诊断/方案/流程/科普/团队/问答） —— */
+.spd-def{font-size:var(--fs-body);line-height:1.85;color:var(--ink);margin-bottom:var(--sp-4)}
+.spd-def .em{color:var(--brand-600);font-weight:600;font-style:normal;border-bottom:1px solid var(--brand-200)}
+.spd-mechlist{display:flex;flex-direction:column;gap:var(--sp-3)}
+.spd-mechitem{padding:var(--sp-3) var(--sp-4);border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface)}
+.spd-mechitem h5{font-size:var(--fs-sm);font-weight:700;color:var(--ink);margin-bottom:4px}
+.spd-mechitem p{font-size:var(--fs-xs);color:var(--ink-2);line-height:1.7;margin:0}
+.spd-dx{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4)}
+.spd-dx-col h4{font-size:var(--fs-sm);font-weight:700;margin-bottom:var(--sp-2);display:flex;align-items:center;gap:6px}
+.spd-dx-tcm h4{color:var(--brand-700)}
+.spd-dx-west h4{color:var(--accent-sage)}
+.spd-dx-col ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin:0;padding:0}
+.spd-dx-col li{font-size:var(--fs-xs);color:var(--ink-2);line-height:1.6;padding-left:16px;position:relative}
+.spd-dx-col li::before{content:"•";position:absolute;left:0;color:var(--brand-500)}
+.spd-dx-west li::before{color:var(--accent-sage)}
+.spd-tx{display:flex;flex-direction:column;padding-left:var(--sp-4)}
+.spd-tx-item{position:relative;padding:0 0 var(--sp-4) var(--sp-4);border-left:2px solid var(--line)}
+.spd-tx-item:last-child{border-left-color:transparent}
+.spd-tx-item::before{content:"";position:absolute;left:-6px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--brand-500);box-shadow:0 0 0 3px var(--brand-50)}
+.spd-tx-phase{display:inline-block;font-size:10px;letter-spacing:.12em;color:var(--brand-600);background:var(--brand-50);border-radius:999px;padding:2px 10px;margin-bottom:6px}
+.spd-tx-item h5{font-size:var(--fs-sm);font-weight:700;color:var(--ink);margin:0 0 4px}
+.spd-tx-item p{font-size:var(--fs-xs);color:var(--ink-2);line-height:1.7;margin:0}
+.spd-flow{list-style:none;display:flex;flex-direction:column;gap:var(--sp-2);margin:0;padding:0}
+.spd-flow li{display:flex;align-items:flex-start;gap:var(--sp-3);font-size:var(--fs-sm);color:var(--ink-2);line-height:1.6}
+.spd-flow-n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--grad-brand);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center;margin-top:1px}
+.spd-prec{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0;padding:0}
+.spd-prec li{font-size:var(--fs-xs);color:var(--ink-2);line-height:1.6;padding-left:18px;position:relative}
+.spd-prec li::before{content:"!";position:absolute;left:0;color:var(--warning);font-weight:700}
+.spd-sci{display:flex;flex-direction:column;gap:var(--sp-3)}
+.spd-sci-card{padding:var(--sp-3) var(--sp-4);border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface)}
+.spd-sci-card .spd-co-toggle{font-size:var(--fs-sm);font-weight:600}
+.spd-team{padding:var(--sp-4);border:1px solid var(--line);border-radius:var(--radius-sm);background:linear-gradient(160deg,var(--brand-50),transparent 80%);border-left:3px solid var(--brand-500);font-size:var(--fs-sm);color:var(--ink-2);line-height:1.8}
+.spd-faq{display:flex;flex-direction:column;gap:var(--sp-2)}
+.spd-faq-q{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-3);width:100%;text-align:left;background:none;border:1px solid var(--line);border-radius:var(--radius-sm);padding:var(--sp-3) var(--sp-4);font-family:inherit;font-size:var(--fs-sm);font-weight:600;color:var(--ink);cursor:pointer;transition:background .2s}
+.spd-faq-q:hover{background:var(--paper-2)}
+.spd-faq-q span{font-size:1.2rem;color:var(--brand-500);transition:transform .2s var(--ease-out-quart);line-height:1}
+.spd-faq.open .spd-faq-q span{transform:rotate(45deg)}
+.spd-faq-a{font-size:var(--fs-xs);color:var(--ink-2);line-height:1.8;padding:var(--sp-3) var(--sp-4);background:var(--paper-2);border-radius:var(--radius-sm)}
+.spec-card[data-spec]{cursor:pointer}
+.spec-card[data-spec]:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+@media (max-width:560px){
+  .spd-feat-grid,.spd-fit,.spd-dx{grid-template-columns:1fr}
+  .spd-stats{gap:var(--sp-4)}
+  .spd-hero,.spd-sec,.spd-cta{padding-left:var(--sp-5);padding-right:var(--sp-5)}
+}
+
+/* ============ 骨架/动画 ============ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s var(--ease-out-quart),transform .55s var(--ease-out-quart)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.08s}
+.reveal[data-delay="2"]{transition-delay:.16s}
+.reveal[data-delay="3"]{transition-delay:.24s}
+.reveal[data-delay="4"]{transition-delay:.32s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ============ 迁移动效（源自 nxcode 动效语言，暖色域适配） ============ */
+/* float：呼吸式浮动 */
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.float-y{animation:floatY 4s var(--ease-in-out) infinite}
+/* glow-pulse：朱砂光晕呼吸（nxcode 用蓝，我们改暖金） */
+@keyframes glowPulse{
+  0%,100%{box-shadow:0 0 0 0 color-mix(in oklch,var(--cinnabar) 0%,transparent),0 8px 24px color-mix(in oklch,var(--cinnabar) 30%,transparent)}
+  50%{box-shadow:0 0 0 12px color-mix(in oklch,var(--cinnabar) 10%,transparent),0 10px 32px color-mix(in oklch,var(--cinnabar) 45%,transparent)}
+}
+.glow-pulse{animation:glowPulse 3s var(--ease-in-out) infinite}
+/* sparkle：星光闪烁 */
+@keyframes sparkle{0%{opacity:0;transform:scale(0) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(180deg)}100%{opacity:0;transform:scale(0) rotate(1turn)}}
+.sparkle{transform-box:fill-box;transform-origin:center;animation:sparkle 2.4s var(--ease-in-out) infinite}
+.sparkle.d2{animation-delay:.8s}
+.sparkle.d3{animation-delay:1.6s}
+/* shimmer：扫光 */
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.shimmer-text{background-size:200% auto;animation:shimmer 3s linear infinite}
+/* slideIn：滑入（供后续使用） */
+@keyframes slideInUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+
+/* ============ 响应式 ============ */
+/* 断点体系：桌面(>1280) / 平板横屏(1024-1279) / 平板竖屏(768-1023) / 移动(<768) */
+
+/* --- 平板横屏 + 小桌面 --- */
+@media (max-width:1279px){
+  .nav-inner{gap:var(--sp-3)}
+  .nav-links{gap:0}
+  .nav-links a{padding:8px 9px;font-size:var(--fs-sm)}
+  /* 中小屏：折叠为汉堡菜单，搜索移入菜单，避免导航栏溢出 */
+  .nav-links{display:none}
+  .burger{display:grid}
+  .nav-actions .nav-search{display:none}
+  .mobile-menu .nav-search{display:flex;width:100%;margin-bottom:10px}
+  .mobile-menu .nav-search .ns-results{position:static;width:100%;box-shadow:none;border:0;border-top:1px solid var(--line);margin-top:6px;max-height:50vh}
+}
+
+/* --- 平板竖屏（含 iPad） --- */
+@media (max-width:1023px){
+  :root{--maxw:960px}
+  .brand-sub{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:var(--sp-6)}
+  .method-grid,.spec-grid{grid-template-columns:1fr 1fr;gap:var(--sp-4)}
+  .well-grid{grid-template-columns:1fr 1fr;gap:var(--sp-4)}
+}
+
+/* --- 移动端 --- */
+@media (max-width:767px){
+  :root{--nav-h:58px;--maxw:100%}
+  .container,.nav-inner{padding-inline:var(--sp-5)}
+  .section{padding-block:clamp(3rem,12vw,5rem)}
+  .nav-links{display:none}
+  .burger{display:grid}
+  .nav-actions .btn-ghost{display:none}
+  .brand-sub{display:none}
+  /* 单列栅格 */
+  .method-grid,.spec-grid,.well-grid{grid-template-columns:1fr}
+  /* 页脚移动端 */
+  .footer-inner{grid-template-columns:1fr;justify-items:center;text-align:center;gap:var(--sp-5)}
+  .footer p{margin-inline:auto}
+  .footer-qr{justify-content:center}
+  /* Hero 移动端 */
+  .hero{padding-top:var(--nav-h);min-height:100vh;min-height:100svh}
+  .hero-title{font-size:clamp(2.4rem,14vw,3.4rem)}
+  .scroll-hint{display:none}
+  .hero-glow.g1{width:80vw;height:80vw}
+  .hero-glow.g2{width:60vw;height:60vw}
+  /* 触控目标 */
+  .btn{min-height:44px}
+  .theme-toggle,.burger{min-height:44px}
+  .faq-q{font-size:1rem}
+  .chip{padding:5px 12px}
+}
+
+/* --- 小屏手机（iPhone SE 等）--- */
+@media (max-width:374px){
+  .hero-title{font-size:clamp(2.1rem,13vw,2.8rem)}
+  .hero-ctas .btn{width:100%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .spec-grid .spec-card{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body data-nav="home" data-page-node-id="PCIbTBbRmaabnFZmAldnGW">
+
+<a class="skip-link" href="#main" data-page-node-id="EydteCOEzarK5QFbLYdBCa">跳到主要内容</a>
+
+<main id="main" data-page-node-id="bfomt71rqwJgxBJ64VECZi">
+
+<!-- ============ Hero ============ -->
+<section class="hero" aria-label="扶阳中医馆" data-page-node-id="tUU4Fqr2LinQ19n5H9hRfM">
+  <div class="hero-bg" aria-hidden="true" data-page-node-id="DKByucG7GORDxITKwKpu9p">
+    <div class="hero-glow g1" data-page-node-id="uUjUwhzrNDMw7olGVXITrS"></div>
+    <div class="hero-glow g2" data-page-node-id="c021LVQ2rJkQagDkGQiYcM"></div>
+    <div class="hero-trigram-bg" aria-hidden="true" data-page-node-id="bazunLzmAHbGhebNLHCNSc">
+      <svg width="100%" height="100%" preserveAspectRatio="xMidYMid" data-page-node-id="skoF3CDFTeQwxZk2bqcxiP">
+        <defs data-page-node-id="pnqo6qmA9J7rJXf9MUPDXD">
+          <pattern id="trigTile" width="172" height="182" patternUnits="userSpaceOnUse" data-page-node-id="J5hln5nP2rycJFp8xm20D7">
+            <g transform="translate(7,13) scale(1.3)" data-page-node-id="qGRBseizYBhJS5FiEmrFCV">
+              <!-- 上爻：阴（断） -->
+              <rect class="yin" x="28" y="22" width="24" height="9" rx="2" data-page-node-id="GGdJIVAUvGe97GBZZ8konx"/>
+              <rect class="yin" x="68" y="22" width="24" height="9" rx="2" data-page-node-id="UqwoBhvRabVkW3QNWKRc9n"/>
+              <!-- 中爻：阳（连） -->
+              <rect class="yang" x="28" y="55" width="64" height="9" rx="2" data-page-node-id="TOk3j0F6PksJ72Px2yyjAh"/>
+              <!-- 下爻：阴（断） -->
+              <rect class="yin" x="28" y="88" width="24" height="9" rx="2" data-page-node-id="ptcW2D70WHH6P13GiSezeG"/>
+              <rect class="yin" x="68" y="88" width="24" height="9" rx="2" data-page-node-id="UjYw22LIkHaoXCt3Ejae7V"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#trigTile)" data-page-node-id="JoiUy7uLnDSdg1FFl7B3xA"/>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-inner" data-page-node-id="szExF9W4lrk1e7jKMuyXmp">
+    <div class="hero-copy" data-page-node-id="cr9JVSlCsIGdOUU87bjub4">
+      <h1 class="hero-title" data-page-node-id="bHKpQJsB8mKSt8IhD09GzF"><span class="zh" data-page-node-id="CTmm1Et1FVg5hF8VCFlrOx">陽主</span><span class="zh-plain" data-page-node-id="TE59Ci963o5uXyNWCjstM8">陰從</span><br data-page-node-id="QZVLv5SRihruqcW0WYCClY"><span class="zh" data-page-node-id="EIVDoR1x2qBpuY96rOqTj7">扶陽</span><span class="zh-plain" data-page-node-id="otPRNPKtjP1BjpFvuxYNKd">固本</span></h1>
+    </div>
+    <div class="hero-ctas" data-page-node-id="T97DWuyVPYqQEHM0ULY7wh">
+      <a class="btn btn-primary btn-lg glow-pulse" href="#dept" data-page-node-id="ivUvdCPcMypNRSDGh1gMye">了解专病门诊
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="transition:transform .3s" data-page-node-id="YRvNfXC6lZdX5n5E4GqBMW"><path d="M5 12h14M13 6l6 6-6 6" data-page-node-id="pXYZc9rc06tZmTVg1dcWXh"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true" data-page-node-id="vtAqCgDPOAfgwkZdeFwFNT"><div class="mouse" data-page-node-id="uZuQPYxhZIBuE64COihSAe"></div>向下探索</div>
+</section>
+
+<!-- ============ 元阳为本 ============ -->
+<section class="section theory" id="theory" aria-labelledby="theory-title" data-page-node-id="kohc5Upx2IDggN0T0NwLjB">
+  <div class="container" data-page-node-id="KqSGtSAhGYlF20bsWKMThP">
+    <div class="theory-hero reveal" data-page-node-id="GGq76WjvaZxfndELgHy9kv">
+      <span class="eyebrow" data-page-node-id="47coy0ZMzl7aP5qEyXNWRQ">元阳为本</span>
+      <h2 class="sec-title theory-title" id="theory-title" data-page-node-id="RMjgpkXI9qoioHnoQQHdMV">坎中一阳 · <span class="zh" data-page-node-id="Mp0F7THDDKBollO6eyOFXy">人生立命之本</span></h2>
+      <p class="theory-sub" data-page-node-id="uxPbyIwj3AlvCULWJIgn9Z">元阳为本，诸阴阳为标。能知诸阴阳皆为元阳所化，一元阳变而为诸阴阳，元阳即是诸阴阳，诸阴阳仍是元阳。而又非诸阴阳之外，另有一元阳，元阳之外，另起诸阴阳。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ 三大专病（截图式症状矩阵） ============ -->
+<section class="section" id="dept" aria-labelledby="dept-title" data-page-node-id="yTHaGP1HvrRziAYRitS99O">
+  <div class="container" data-page-node-id="fVYJjvacMitLmRzr8VMBIJ">
+    <div class="sec-head reveal" data-page-node-id="cCsiPxzQL4txrfEUOLOtg2">
+      <span class="eyebrow" data-page-node-id="lR0B17pLcV0Q4Z5ETrBFdL">专病门诊</span>
+      <h2 class="sec-title" id="dept-title" data-page-node-id="0KEIcwPzngOaq9vsobgIEY">三大专病门诊</h2>
+      <p class="sec-desc" data-page-node-id="eZwmzIqcCGvwjex2eu6KBM">以扶阳理论为学术根基，设睡眠障碍、代谢疾病、男科康复三大专病门诊，对合并疾病实施共病同治、全周期调理。</p>
+    </div>
+    <div class="spec-grid reveal-stagger" id="deptGrid" data-page-node-id="AHT5uZTGiK7pu1JRrTo5ni"></div>
+  </div>
+</section>
+
+<!-- ============ 学术渊源（传承时间轴） ============ -->
+<section class="section" id="lineage" aria-labelledby="lineage-title" data-page-node-id="58MjeMb6Bw34U2VToTysfV">
+  <div class="container" data-page-node-id="nRDvxjjE6pPxvfG9CJdN09">
+    <div class="sec-head reveal" data-page-node-id="HsdPUUu8Duwe1cqi4VUtuF">
+      <span class="eyebrow" data-page-node-id="D18YkiBtAfKacwv7uAlYQn">学术渊源</span>
+      <h2 class="sec-title" id="lineage-title" data-page-node-id="VyHP87sWGUWmaddYDzNBH2">钦安卢氏 · 传承脉络</h2>
+    </div>
+    <div class="lineage-axis reveal" data-page-node-id="TTFcH7gKlJCf3FNi8w7CUb">
+      <ol class="axis-list" data-page-node-id="GMtlsCsXAFfHGG28I3g3Q9">
+        <li class="axis-item" data-page-node-id="1acJpN0GynrTbqjhueT39c">
+          <span class="axis-year" data-page-node-id="Gsg7cZ9U5isKj9QLsvM9gX">1804</span>
+          <span class="axis-node" data-page-node-id="QSnbcAnAon7eFfvNxzBH2n"></span>
+          <div class="axis-body" data-page-node-id="QnYOA1OsOAvG7XKMjPrqCL">
+            <h4 class="axis-name" data-page-node-id="VNFGEaYBWxgMpK5f62toSI">郑钦安<span class="axis-role" data-page-node-id="GzABHCuH6u3kSOGOFpuNK2">名寿全 · 火神派开宗</span></h4>
+            <p class="axis-desc" data-page-node-id="jvhhmGGHkkLMvS1ksZgTFp">著《医理真传》《医法圆通》《伤寒恒论》，立"阳主阴从、以火立极"之扶阳纲领，开火神一派。</p>
+          </div>
+        </li>
+        <li class="axis-item" data-page-node-id="cIFL4fYxJe4E96Ck47Sr3w">
+          <span class="axis-year" data-page-node-id="1lLOH8TYnH0W0tkOg8rvOa">1876</span>
+          <span class="axis-node" data-page-node-id="5pLwGSZtwi6X3C7hE0KKI6"></span>
+          <div class="axis-body" data-page-node-id="UFs2OKdCRTRS0j4QWJ58Fd">
+            <h4 class="axis-name" data-page-node-id="7OwIn3OZtkcy86rcMNoC3J">卢铸之<span class="axis-role" data-page-node-id="5NOEQvJSEtcti4ZQ6ykr8h">号金寿老人 · 卢氏第一代</span></h4>
+            <p class="axis-desc" data-page-node-id="e2bi7apSHEDOpPBanulPC9">幼从颜龙臣（刘沅门人），后师事郑钦安十一年尽得其传；集钦安之学为大成，发展为纯阳医学，奠定卢氏医学。</p>
+          </div>
+        </li>
+        <li class="axis-item" data-page-node-id="RBsFn2yZbANA7MlgnOfCrs">
+          <span class="axis-year" data-page-node-id="rLjYCg5xvMBTrT7Hg5TeTo">1901</span>
+          <span class="axis-node" data-page-node-id="pvpnAqGzwvJWxIgPdZBrAy"></span>
+          <div class="axis-body" data-page-node-id="DBssT2o89eehZ4RPOQs6rh">
+            <h4 class="axis-name" data-page-node-id="TRuXeB6fJK70Zj8YnS11nY">卢永定<span class="axis-role" data-page-node-id="Q5X2wDZlNIRipgnyzD6k54">字云龙 · 卢氏第二代</span></h4>
+            <p class="axis-desc" data-page-node-id="1zMcFMGgxaxev8R0BfLtwz">卢铸之长子，克承家学、承前启后，尤精脉法；著《卢氏医学心法（续）》《卢氏临证实验录（续）》。</p>
+          </div>
+        </li>
+        <li class="axis-item" data-page-node-id="DEVRdoLFEoWNyGeEV5RVrw">
+          <span class="axis-year" data-page-node-id="XiZNIG0y1fWWnEn0o2SEXk">1947</span>
+          <span class="axis-node" data-page-node-id="AV2ujnhARB3lig0zWfGZ3F"></span>
+          <div class="axis-body" data-page-node-id="OYIuG8JxcR771FrGpX9BHX">
+            <h4 class="axis-name" data-page-node-id="dO8mAMzgP4EVY9eDEuecNu">卢崇汉<span class="axis-role" data-page-node-id="oqSCF4C8whwdDub7nyCO9T">卢氏第三代 · 当代领军</span></h4>
+            <p class="axis-desc" data-page-node-id="3vjtG0mBAyHsSbYOo5P91s">卢铸之之孙、卢永定之侄，幼承庭训；为钦安卢氏医学流派传承工作室首席导师，著《扶阳讲记》《扶阳论坛》。</p>
+          </div>
+        </li>
+        <li class="axis-item axis-key" data-page-node-id="DSCzXfDsvPUTLPBDgyUaBc">
+          <span class="axis-year" data-page-node-id="4oTNuR8KHl4e8Gj92qdE8q">2006</span>
+          <span class="axis-node" data-page-node-id="PQy3txZfS6AVCCAVCAOC1C"></span>
+          <div class="axis-body" data-page-node-id="dpZoPHwE019TmQw1zA2OAH">
+            <h4 class="axis-name" data-page-node-id="Dl4TM6w76t5s0D5DEAiWjj">刘力红 · 李耕 · 刘方<span class="axis-role" data-page-node-id="McSqOTGiY1nIIi0szbG6hx">拜入卢崇汉门下 · 入室弟子</span></h4>
+            <p class="axis-desc" data-page-node-id="Fib6x7jWS1Zya1vwDLzIXk">正式拜师于中医火神派（钦安卢氏医学）代表人物卢崇汉先生门下，成为其入门弟子；李耕著有《七堂至明中医扶阳课》。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 经典法度（调理思路） ============ -->
+<section class="section" id="method" aria-labelledby="method-title" data-page-node-id="ldFW5oQJKD046c7vJOh1UG">
+  <div class="container" data-page-node-id="WhLNbMCtxRtNyPX5gLJ4kk">
+    <div class="sec-head reveal" data-page-node-id="Cav2OyIscw23hEFTISVsMQ">
+      <span class="eyebrow" data-page-node-id="sQQD4YHcShAFiyLphPIejB">经典法度</span>
+      <h2 class="sec-title" id="method-title" data-page-node-id="0uceebGOHXQa96HHjOkDnF">人生立命在于以火立极 · 治病立法在于以火消阴</h2>
+      <p class="sec-desc" data-page-node-id="GeK7amsqpFERlEew9wBSR9">病在阳者扶阳抑阴，病在阴者用阳化阴</p>
+    </div>
+    <div class="method-grid" data-page-node-id="izhSLKG24SaaaiZH3CM8V2">
+      <div class="method-card reveal" data-page-node-id="IQ0L5zxADCAKz6q7MDASQg">
+        <div class="m-ic" data-page-node-id="nTdasBu6ILWW9nVRKAP3lJ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="nVfaiHwyKyVkZbInmz3kAf"><path d="M12 3c3 2 5 5 5 9a5 5 0 0 1-10 0c0-4 2-7 5-9z" data-page-node-id="kyXcIbJBNQK7gqAM456lMx"/></svg></div>
+        <h3 data-page-node-id="YNKXC1gVsR75ITHlMM3OnN">桂枝法</h3>
+        <p class="m-sub" data-page-node-id="J7rDloy1PvPxxPGBP7tB3o">温通扶阳 · 调和营卫</p>
+        <p data-page-node-id="uGmamsVHBQxYwH3wznItoR">以桂枝为君，温通阳气、调和营卫，是扶阳学派的开门之法、基础法度。</p>
+      </div>
+      <div class="method-card reveal" data-delay="1" data-page-node-id="WENlGMcenAAwG1DnDrIZOh">
+        <div class="m-ic" data-page-node-id="QWhnGHlEDxpy8CSuRoCaSg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="maMnz65Hv9Ktz9BiTXHynP"><path d="M12 21s-7-4.6-7-10a7 7 0 0 1 14 0c0 5.4-7 10-7 10z" data-page-node-id="pzbpFgNPnmFjMguO7MHkLB"/><path d="M9 11a3 3 0 0 0 6 0" data-page-node-id="tybIeqnypnjPd0FG5MbrZR"/></svg></div>
+        <h3 data-page-node-id="dr8CiveCja72E3MisUX7ju">四逆法</h3>
+        <p class="m-sub" data-page-node-id="BUsaA9JmrUnnUXgkcMnWPV">回阳救逆 · 温补命门</p>
+        <p data-page-node-id="x8FHpQNfEZ0XU7rdM1K6EJ">以附子、干姜、甘草回阳救逆，温补命门真阳，为扶阳之重法。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 日常养生 ============ -->
+<section class="section wellness" id="wellness" aria-labelledby="wellness-title" data-page-node-id="k4jzYU7Vcz61M2sjoJsxnW">
+  <div class="container" data-page-node-id="UUCKDzwSXgBsljawMqkhJW">
+    <div class="sec-head reveal" data-page-node-id="mO1oTm0FyA3THzlwTKsjRN">
+      <span class="eyebrow" data-page-node-id="XVV8tWKkyUMEU1kzk4B49H">日常养生</span>
+      <h2 class="sec-title" id="wellness-title" data-page-node-id="wQdO6dxVps9odCpfKnjxnM">扶阳养生四则</h2>
+      <p class="sec-desc" data-page-node-id="A0xbcEML8q2qkz5QM0Aa4j">养阳贵在顺应天时，四时调摄。</p>
+    </div>
+    <div class="well-grid" data-page-node-id="HT8n4VjBpWe9LSSG3loj1c">
+      <div class="well-card reveal" data-page-node-id="eJaOLnzskc465DHrQscNVw">
+        <div class="w-ic" data-page-node-id="K72tbJndbFxmviYDHKWAsx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="oiLkxQyuubz1CDMAO4MNUM"><circle cx="12" cy="12" r="4" data-page-node-id="NzTLgG7vN1GEmA7GuGBtsv"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-page-node-id="giMphEcXjEzymr6JUsLr1a"/></svg></div>
+        <h3 data-page-node-id="HWLHg2KccaD6u9EA1RF3xa">晨起升阳</h3>
+        <p class="w-time" data-page-node-id="itgBAoKbqT7BbkvDOzDpVj">卯时 · 日出而作</p>
+        <p data-page-node-id="lGtctyDUxLQrRGbPqYbS65">早起顺应阳气生发，晨间适度活动、晒背，助阳气升腾。</p>
+      </div>
+      <div class="well-card reveal" data-delay="1" data-page-node-id="09r6p4UsIAkKpiZLGs7AAy">
+        <div class="w-ic" data-page-node-id="ZFEsEEU61pFlk4sz0MZ3A5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="1sLG0ixZE0rbOTyRpDh9H7"><path d="M12 3v18M5 7h14M7 3v2M17 3v2" data-page-node-id="N1NP7cptk3FI8lX2G7rCbG"/></svg></div>
+        <h3 data-page-node-id="Rf8wItuqTthVrOp1wYFcw5">饮食温养</h3>
+        <p class="w-time" data-page-node-id="jLqvpXDZ57AoF3edObpNnE">忌生冷寒凉</p>
+        <p data-page-node-id="bfgtAGrZFIoD4EUFMJCHN0">少食生冷，多温热易化之品，顾护脾阳，脾阳旺则运化有力。</p>
+      </div>
+      <div class="well-card reveal" data-delay="2" data-page-node-id="DaZLnGUQ5gSnQhXuTufMVz">
+        <div class="w-ic" data-page-node-id="UtFqD6AGETsojm6uGVL1Em"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="CmeZkAtGnaHLiQSoT1n6u0"><path d="M4 12a8 8 0 0 1 16 0" data-page-node-id="QzApfXHeaURwENXSmFukUK"/><path d="M12 4v8l4 2" data-page-node-id="GU0FOCjzxDb4z2sB7ce6BQ"/></svg></div>
+        <h3 data-page-node-id="nuKDngF8zZ8WflH1Y5f2ep">动以生阳</h3>
+        <p class="w-time" data-page-node-id="N7fBtpkRrsl5QtTVZa3grL">八段锦 · 适度</p>
+        <p data-page-node-id="4UFGzTbLIuN49pytSKwOZ3">八段锦、慢走等舒缓运动，「动则生阳」，但忌大汗伤阳。</p>
+      </div>
+      <div class="well-card reveal" data-delay="3" data-page-node-id="6c5E3IEBwTXrbNtlhKFYrS">
+        <div class="w-ic" data-page-node-id="kYuH90ODPAPbhgnE0kSU90"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="uxKcKKNYH7nUE25QY4FzIR"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" data-page-node-id="fByaAGeLdHwPl7VttKqzJp"/></svg></div>
+        <h3 data-page-node-id="YlrwfLA09zGtWTaezoKEg3">静以藏阳</h3>
+        <p class="w-time" data-page-node-id="A8k66nwMWAX7YgZDbkv15g">子时 · 潜藏勿耗</p>
+        <p data-page-node-id="qas7pRETEvmCSDebqsHDYN">早睡勿熬夜，使阳气得藏。情志平和，静心养神，勿妄耗真阳。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" aria-labelledby="faq-title" data-page-node-id="T5HXHtK06GFlMf6wctAZqM">
+  <div class="container" data-page-node-id="9CMsiF9aiMhSiyuPHMAItz">
+    <div class="sec-head reveal" data-page-node-id="0VDHKbXDuFsVXxdqYgN9Rp">
+      <span class="eyebrow" data-page-node-id="mfMjPfPfQElYj2uTuxxhdk">常见问题</span>
+      <h2 class="sec-title" id="faq-title" data-page-node-id="EtyQqvE9QDd8oPbrR3qWRT">就诊前先了解</h2>
+    </div>
+    <div class="faq-list reveal" id="faqList" data-page-node-id="kFSJYVjlyqrkaObKNtL8Ef"><!-- JS 渲染 --></div>
+  </div>
+</section>
+
+<!-- ============ 预约 ============ -->
+</main>
+
+<!-- 专病详情弹窗（集成自设计方案 · 复用跳转逻辑） -->
+<div class="spd-modal" id="spdModal" hidden data-page-node-id="R2tIXb1U0cmCdmphcXBMAB">
+  <div class="spd-overlay" data-spd-close data-page-node-id="nzLws5vMmAU2V2LW7zojAT"></div>
+  <div class="spd-panel" role="dialog" aria-modal="true" aria-labelledby="spdTitle" data-page-node-id="1eU7qwQQt17MbSs0YiYdtU">
+    <button type="button" class="spd-close" data-spd-close aria-label="关闭专病详情" data-page-node-id="SsVy9bFhNmGTiUzRK2sN54">×</button>
+    <h2 id="spdTitle" class="spd-sr" data-page-node-id="s71gIzMrZMjn1djLwsGmn3">专病详情</h2>
+    <div id="spdPanel" data-page-node-id="MwCy2HSAhB4cHE0D55FCFt"></div>
+  </div>
+</div>
+
+<footer class="footer" aria-label="页脚" data-page-node-id="B8wlChygqJdILPKkinG1MG">
+  <div class="container footer-inner" data-page-node-id="jG5vCGBJHJCOCGUKdspyRm">
+    <div class="footer-qr" aria-label="服务号与小程序二维码" data-page-node-id="jdwtGnRYBxJ1l3XQvE8wFS">
+      <figure class="qr-item" data-page-node-id="CQGGRXrckqBbLToNLsZi3k">
+        <img src="assets/qrcode-service.jpg" alt="扶阳中医馆小程序二维码" width="116" height="116" loading="lazy" data-page-node-id="wiAjFyq3gFBK7ZbFy2yok5">
+        <figcaption data-page-node-id="zpFVmQ7Xa6r17AgftWDDZk">小程序 · 线上问诊</figcaption>
+      </figure>
+      <figure class="qr-item" data-page-node-id="RAT3wgqHRlv6Gmm0eaoe9N">
+        <img src="assets/qrcode-miniapp.jpg" alt="扶阳中医馆服务号二维码" width="116" height="116" loading="lazy" data-page-node-id="HNvQ3RrJ9o7ZKKOA8AxvYD">
+        <figcaption data-page-node-id="OAXBawN6WyAo6GWW1QS00t">服务号 · 关注扶阳</figcaption>
+      </figure>
+    </div>
+    <p class="footer-legal" data-page-node-id="CaRqzclF1NpcK4JJ8ViPKq">本站内容为科普与宣传用途，不构成诊断与治疗建议。如有不适，请及时至正规医疗机构就诊。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var FY = window.FY = window.FY || {};
+var $ = function(s,c){return (c||document).querySelector(s)};
+var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+FY.DATA = {
+  dept: [
+    {id:"sleep", name:"睡眠障碍", sub:"SLEEP DISORDER", icons:["失眠","易醒","早醒","嗜睡","节律紊乱","药物相关","呼吸暂停","发作性睡病","日间嗜睡"], count:9, href:"sleep-overview.html"},
+    {id:"meta", name:"代谢疾病", sub:"METABOLISM", icons:["高血糖","高血压","血脂异常","尿酸异常","脂肪肝","中心肥胖","脾胃病","糖前状态"], count:7, href:"metabolism-overview.html"},
+    {id:"men", name:"男科康复", sub:"MENS HEALTH", icons:["性功能障碍","慢性前列腺炎","前列腺增生","男性更年期","术后调养","男性不育"], count:6, href:"men-overview.html"}
+  ],
+  faq: [
+    {q:"就诊需要提前准备什么？", a:"请携带既往病历与近期体检报告，便于医师四诊合参。首次就诊建议预留充足时间。"},
+    {q:"调理多久能见效？", a:"调理效果存在个体差异，改善节奏因人而异、循序渐进。一般按程复诊、动态调方，重在长期巩固。"},
+    {q:"扶阳适用于所有人吗？", a:"扶阳为学术根基，但具体调理仍需辨证论治、一人一方。个体方案须由执业医师四诊合参后确定。"},
+    {q:"三大门诊可以同时调理合并疾病吗？", a:"可以。本馆特色即「共病同治、全周期调理」，医师会通盘考虑主病与合并病，制定一体化方案。"}
+  ]
+};
+
+/* 专病详情内容（集成自设计方案 specialty-detail.html，依扶阳学术审慎立论） */
+FY.SPECIALTY_DETAIL = {
+  sleep:{
+    name:"睡眠障碍", en:"SLEEP DISORDERS", tag:"阳不归位，寤寐失序",
+    stats:[["9","种常见病症"],["6","扶阳治法"],["2","常见共病关联"]],
+    philosophy:'扶阳学术以「<span class="em">阳入于阴则寐，阳出于阴则寤</span>」为枢机。睡眠障碍多缘坎中一阳浮动、不能归根，或心肾不交、君火不降，而非独责阴血不足。治以「<span class="em">引阳入阴、温潜安神</span>」，复其阳和之常，非概投寒凉重镇、强行敛神。',
+    mech:["阳不归位 · 浮越于上","君火不降 · 心肾不交","中阳不足 · 痰湿扰神"],
+    indications:["失眠","易醒","早醒","嗜睡","节律紊乱","药物相关失眠","睡眠呼吸暂停","发作性睡病","日间功能受损"],
+    features:[
+      {i:"moon",t:"温潜安神",d:"桂枝加龙牡、潜阳封髓之法，引浮阳归肾，宁神而不伤阳。"},
+      {i:"leaf",t:"桂枝法运中",d:"运中焦、化痰湿，绝扰神之源；脾升胃降则神自安。"},
+      {i:"flame",t:"四逆温命",d:"命门火衰、阳根不固者，温肾壮阳以固其本。"},
+      {i:"needle",t:"扶阳灸养",d:"灸关元、涌泉等穴，借艾火温通，助阳归根。"},
+      {i:"book",t:"一人一方",d:"依脉证而立桂枝法、四逆法，法随证立、方从法出。"},
+      {i:"cycle",t:"全周期调理",d:"急性期安神、缓解期固本、巩固期防复，分期而治。"}
+    ],
+    yes:["入睡困难、眠浅易醒反复三月以上","伴畏寒、手足不温、神疲乏力","西药起效不佳或依赖、欲减停安眠药","焦虑紧张、阳气浮动之亚健康状态"],
+    no:["急性精神障碍所致严重失眠（需专科优先）","妊娠及哺乳期用药须医师面诊评估","对艾灸温热疗法不耐受者","器质性脑病所致意识障碍"],
+    definition:'失眠障碍是一类常见的睡眠障碍，指虽有适宜的睡眠机会与环境，仍持续存在对睡眠时间与/或质量的不满，并引起日间功能损害。临床以「<span class="em">入睡困难、维持睡眠困难、早醒且难以复睡</span>」为核心，常伴日间疲乏、注意力下降与情绪波动。据《2025 年中国睡眠健康调查报告》，我国近半数成年人存在睡眠困扰，呈「中年最重、女性易感、年轻化」态势。',
+    pathogenesis:[
+      {t:"西医视角 · 睡眠调节失衡", d:"觉醒系统过度激活与睡眠驱动力不足并存，涉及生物钟及中枢神经递质（GABA、食欲素、褪黑素等）的节律紊乱。"},
+      {t:"扶阳枢机 · 阳不归位", d:"坎中一阳浮动、不能归根，或心肾不交、君火不降；中阳不足则痰湿内生、上扰神明。"},
+      {t:"情志与作息 · 外因诱发", d:"焦虑紧张、昼夜节律紊乱、长期压力与不良睡眠习惯，皆可耗伤阳气、妨碍阳入于阴。"}
+    ],
+    symptoms:["入睡困难（＞30 分钟）","睡眠维持困难（频繁夜醒）","早醒且难以复睡","日间疲乏、注意力下降","情绪波动、焦虑","节律紊乱、嗜睡"],
+    diagnosis:{
+      tcm:["不寐 · 阳不入阴","分证：心肾不交、心脾两虚、肝火扰心、痰热内扰、心胆气虚等","以四诊合参辨阳虚浮越之枢机"],
+      west:["睡眠机会与环境适宜，仍持续≥3 月、每周≥3 次入睡困难／维持困难／早醒","伴日间功能损害（疲乏、注意力、情绪或工作学习受损）","参考 ICSD-3／DSM-5 失眠障碍诊断要点"]
+    },
+    treatment:[
+      {phase:"急性期", t:"温潜安神，引阳入阴", d:"桂枝加龙牡、潜阳封髓之法，宁神而不伤阳；必要时配合规范认知行为疗法（CBT-i）。"},
+      {phase:"缓解期", t:"运中化湿，扶其枢机", d:"桂枝法运中焦、化痰湿，绝扰神之源；脾升胃降则神自安。"},
+      {phase:"巩固期", t:"温固命门，防其复发", d:"四逆法温肾壮阳、灸关元涌泉，助阳归根，并结合规律作息与睡眠节律重建。"}
+    ],
+    flow:["线上或到店预约，初诊预留充足时间","医师四诊合参，辨识阳虚浮越之枢机","辨证立法（桂枝法／四逆法），一人一方","按程复诊、动态调方，结合作息与灸养","长期巩固，防其复发"],
+    precautions:["扶阳调理须由执业医师辨证施治，勿自行套方","正在服用安眠类化学药者，减停须在医师指导下逐步进行","不替代认知行为疗法（CBT-i），二者可协同","艾灸温热疗法不耐受者须提前告知医师"],
+    science:[
+      {name:"失眠障碍", desc:"常见睡眠障碍，全球约三分之一成年人曾出现失眠症状，符合诊断标准者约 3.9%–14.7%；长期失眠与抑郁、焦虑及心脑血管疾病风险相关。"},
+      {name:"阻塞性睡眠呼吸暂停", desc:"夜间反复呼吸暂停与缺氧，与代谢综合征互为因果，常表现为鼾声、憋醒与日间嗜睡，需与单纯失眠鉴别。"}
+    ],
+    team:"由卢氏扶阳医学传承人领衔，联合睡眠医学方向中医主诊医师与健康管理师组成「睡眠专病团队」，坚持四诊合参、一人一方。具体出诊信息以馆内当日公示为准。",
+    faqs:[
+      {q:"失眠多久需要就诊？", a:"入睡困难、眠浅易醒或早醒反复三月以上，且已影响日间功能者，建议及时就诊评估。"},
+      {q:"扶阳调理与安眠药冲突吗？", a:"不冲突，但需医师统筹。扶阳重在调本，化学药减停须在医师指导下逐步进行，避免突然停药。"},
+      {q:"调理多久能见效？", a:"存在个体差异，改善循序渐进。一般按程复诊、动态调方，重在长期巩固与睡眠节律重建。"}
+    ]
+  },
+  meta:{
+    name:"代谢疾病", en:"METABOLIC DISORDERS", tag:"阳馁运化，膏脂乃聚",
+    stats:[["7","类代谢异常"],["6","扶阳治法"],["2","常见共病关联"]],
+    philosophy:'扶阳视代谢异常为「<span class="em">阳气虚馁、运化失司</span>」。脾阳不运则水谷不化、痰湿内生，命门火衰则膏脂堆积、清浊不分。治以「<span class="em">温补脾肾之阳、运转枢机</span>」，助一身气化，而非专事清泄。',
+    mech:["脾阳不运 · 痰湿内生","命门火衰 · 气化无权","枢机不利 · 清浊相混"],
+    indications:["高血糖","高血压","血脂异常","尿酸异常","脂肪肝","中心性肥胖","脾胃病"],
+    features:[
+      {i:"leaf",t:"温运中焦",d:"桂枝法助脾运、化痰湿，复中焦升降之枢。"},
+      {i:"flame",t:"温肾化气",d:"四逆法助命门火，推动一身气化与膏脂代谢。"},
+      {i:"moon",t:"化痰降浊",d:"绝膏脂痰浊之源，改善胰岛敏感与脂代谢。"},
+      {i:"needle",t:"扶阳灸养",d:"灸中脘、脾俞、足三里，温通以助运化。"},
+      {i:"book",t:"一人一方",d:"依脉证定桂枝法、四逆法，随证加减。"},
+      {i:"cycle",t:"全周期调理",d:"评估—干预—巩固，结合饮食运动节律。"}
+    ],
+    yes:["体检多项指标异常 / 代谢综合征","形体肥胖、畏寒、肢体困重乏力","糖尿病前期欲积极干预","长期应酬、痰湿体质人群"],
+    no:["急性代谢危象（酮症、高渗须急诊）","妊娠糖尿病须专科管理","严重肝肾功能不全慎用灸药","不替代既定慢病西药（须医师协同）"],
+    definition:'代谢疾病是以糖、脂、尿酸等代谢紊乱为核心的一组疾病的总称，涵盖高血糖、高血压、血脂异常、高尿酸、脂肪肝与中心性肥胖等。扶阳视其病机为「<span class="em">阳气虚馁、运化失司</span>」：脾阳不运则水谷不化、痰湿内生，命门火衰则膏脂堆积、清浊不分。我国成人高尿酸血症患病率约 13.3%，代谢相关脂肪性肝病在普通人群约 20%–30%、肥胖人群可达 70%–90%。',
+    pathogenesis:[
+      {t:"西医视角 · 胰岛素抵抗与代谢紊乱", d:"以胰岛素抵抗为核心，联动糖、脂、嘌呤代谢异常与肝脏脂肪异常堆积，形成代谢综合征。"},
+      {t:"扶阳枢机 · 脾阳不运、命门火衰", d:"中阳不足则水谷不化、痰湿内生；命门火衰则气化无权，膏脂与清浊代谢失司。"},
+      {t:"枢机不利 · 清浊相混", d:"升降失序、清浊不分，痰湿膏脂停聚，久则累及肝、肾、心脑等脏腑。"}
+    ],
+    symptoms:["体检多项指标异常","形体肥胖、中心性肥胖","畏寒、肢体困重乏力","口干、多饮、多尿（血糖相关）","关节红肿热痛（痛风相关）","右上腹闷胀（脂肪肝相关）"],
+    diagnosis:{
+      tcm:["消渴、脾瘅、痰湿、膏浊等病证范畴","分证：脾肾阳虚、痰湿内蕴、湿热内盛、气阴两虚等","四诊合参辨阳气盛衰与痰湿膏浊之机"],
+      west:["血糖、血压、血脂、血尿酸、肝功能、肾功能等指标分层评估","代谢综合征诊断（腹型肥胖 + 至少两项代谢异常）","必要时影像学评估脂肪肝、糖化血红蛋白与尿蛋白等"]
+    },
+    treatment:[
+      {phase:"评估期", t:"合参分层，明确靶标", d:"四诊合参与现代检验并重，明确糖、脂、尿酸等核心指标与体质偏颇。"},
+      {phase:"干预期", t:"温运中焦，温肾化气", d:"桂枝法助脾运、化痰湿，四逆法助命门火，推动一身气化与膏脂代谢。"},
+      {phase:"巩固期", t:"节律调摄，固本防复", d:"结合饮食、运动与作息节律管理，长期巩固、防止指标反复。"}
+    ],
+    flow:["预约初诊，携带近期体检报告","四诊合参 + 指标解读，明确体质与靶标","辨证立法，一人一方（桂枝法／四逆法）","配合饮食、运动与作息节律指导","按程复诊，动态监测指标、调方巩固"],
+    precautions:["急性代谢危象（酮症、高渗）须及时急诊，不可延误","不替代既定慢病西药，调整须与专科医师协同","妊娠糖尿病、严重肝肾功能不全者须专科管理","降尿酸、调脂等须在医师指导下规范进行"],
+    science:[
+      {name:"痛风", desc:"嘌呤代谢紊乱所致代谢病，我国成人高尿酸血症患病率约 13.3%、痛风约 1.1%–3.6%；急性期以关节剧痛红肿热为特征，常累及第一跖趾关节，反复发作可致关节畸形与肾损害。"},
+      {name:"代谢相关脂肪性肝病", desc:"与代谢功能障碍相关的慢性肝病，普通人群患病率约 20%–30%、肥胖人群可达 70%–90%，疾病谱由脂肪肝向脂肪性肝炎、纤维化、肝硬化进展。"},
+      {name:"糖尿病肾脏疾病", desc:"糖尿病最常见并发症，30%–40% 的糖尿病患者可发生；我国 2 型糖尿病合并慢性肾脏病患病率约 36%，早期以微量白蛋白尿为主，须早筛早治。"}
+    ],
+    team:"由卢氏扶阳医学传承人领衔，联合代谢病方向中医主诊医师、临床营养师与健康管理师组成「代谢专病团队」，以温补脾肾、运转枢机为核心，结合现代指标动态管理。具体出诊信息以馆内当日公示为准。",
+    faqs:[
+      {q:"代谢病能用中药替代西药吗？", a:"不替代。扶阳调理重在温运脾肾、恢复气化，与规范西药协同管理；调整或减停西药须在专科医师指导下进行。"},
+      {q:"调理需要配合饮食运动吗？", a:"需要。饮食、运动与作息节律是代谢调理的基石，与汤药、灸养协同，方能长期巩固、防止反复。"},
+      {q:"多久复查一次指标？", a:"依病情与方案而定，一般按程复诊、动态监测血糖、血脂、尿酸等指标，据结果调方。"}
+    ]
+  },
+  men:{
+    name:"男科康复", en:"MENS HEALTH", tag:"命门火衰，阳道不兴",
+    stats:[["6","类男科病症"],["6","扶阳治法"],["2","常见共病关联"]],
+    philosophy:'扶阳以「<span class="em">男子以阳气为本，阳道之行全赖命门之火</span>」。阳痿、精冷、遗泄、不育多因命门火衰、坎阳不温，或寒湿下注、阳道不兴。治以「<span class="em">温肾壮阳、填精化气</span>」，忌苦寒伐阳、一味清利。',
+    mech:["命门火衰 · 阳道不兴","寒湿下注 · 经络凝滞","精室失温 · 气化无权"],
+    indications:["性功能障碍","慢性前列腺炎","前列腺增生","男性更年期","术后调养","男性不育"],
+    features:[
+      {i:"flame",t:"温肾壮阳",d:"四逆法温命门、兴阳道，填精化气。"},
+      {i:"moon",t:"潜阳封髓",d:"固精室、敛浮阳，摄纳下元。"},
+      {i:"pulse",t:"活血通脉",d:"佐以温通行滞，通调下焦经络。"},
+      {i:"needle",t:"扶阳灸养",d:"灸关元、肾俞，温煦下焦元阳。"},
+      {i:"book",t:"一人一方",d:"依脉证立四逆法、桂枝法，随证化裁。"},
+      {i:"cycle",t:"全周期调理",d:"急则温通、缓则固本、巩固防复。"}
+    ],
+    yes:["勃起功能下降伴畏寒、腰膝酸软","慢性盆腔不适、畏寒喜暖","男性更年期精力不济","术后 / 产后（男）阳虚调养"],
+    no:["器质性血管神经病变须专科评估","急性泌尿生殖感染发热期","恶性肿瘤相关须优先西医","对温热疗法不耐受者"],
+    definition:'男科康复以「<span class="em">男子以阳气为本，阳道之行全赖命门之火</span>」为纲，主理性功能障碍、慢性前列腺炎、前列腺增生、男性更年期与术后调养等。其中慢性非细菌性前列腺炎（III 型）是临床常见病，占前列腺炎发病数的 90%–95%，好发于青壮年男性，发病率约 10%–15%、复发率约 25%–50%。',
+    pathogenesis:[
+      {t:"西医视角 · 炎症与盆底功能失调", d:"前列腺反复充血、盆底神经肌肉功能失调及病原体（滴虫、支原体、衣原体等）感染等多因素共同作用。"},
+      {t:"扶阳枢机 · 命门火衰、寒湿下注", d:"命门火衰则阳道不兴，寒湿下注则经络凝滞、精室失温，气化无权。"},
+      {t:"情志与久坐 · 外因加重", d:"焦虑抑郁、久坐少动、受凉劳累，皆可耗伤下焦阳气、加重寒湿凝滞。"}
+    ],
+    symptoms:["会阴、小腹、腰骶、睾丸坠胀疼痛","尿频、尿急、尿痛、尿等待、尿道滴白","性功能障碍（阳痿、早泄、遗精）","焦虑、抑郁、失眠、记忆力下降","男性更年期精力不济","术后／产后阳虚调养"],
+    diagnosis:{
+      tcm:["阳痿、遗泄、精冷、淋证等病证范畴","分证：命门火衰、寒湿下注、肾虚血瘀、湿热下注等","四诊合参辨命门之火盛衰与下焦寒湿之机"],
+      west:["按 NIH 分类属 III 型前列腺炎，排除细菌感染","结合前列腺液、尿常规、影像学等检查","排除器质性血管神经病变及泌尿生殖系统感染"]
+    },
+    treatment:[
+      {phase:"急性期", t:"温通化滞，缓急止痛", d:"温阳化气、通调下焦经络，缓解会阴坠胀与排尿不适。"},
+      {phase:"缓解期", t:"温肾壮阳，填精化气", d:"四逆法温命门、兴阳道；潜阳封髓固精室、摄纳下元。"},
+      {phase:"巩固期", t:"灸养固本，防其复发", d:"灸关元、肾俞温煦下焦元阳，结合起居调摄，巩固防复。"}
+    ],
+    flow:["预约初诊，如实告知症状与既往史","四诊合参，辨命门火衰与下焦寒湿之机","辨证立法，一人一方（四逆法／桂枝法）","配合灸养与起居、久坐管理指导","按程复诊，动态调方、巩固防复"],
+    precautions:["急性泌尿生殖感染发热期须先规范抗感染处理","器质性血管神经病变、肿瘤相关须优先专科评估","对温热疗法不耐受者须提前告知医师","忌久坐憋尿、受凉劳累，配合规律起居与适度运动"],
+    science:[
+      {name:"慢性非细菌性前列腺炎", desc:"占前列腺炎发病数 90%–95%，以疼痛、排尿异常及精神神经症状为主，病情缠绵易复发，常合并性功能障碍与焦虑抑郁。"},
+      {name:"男性更年期", desc:"随年龄增长睾酮水平下降，出现精力不济、情绪波动、性功能减退等，扶阳以温肾固本、填精化气调之。"}
+    ],
+    team:"由卢氏扶阳医学传承人领衔，联合男科方向中医主诊医师与健康管理师组成「男科专病团队」，以温肾壮阳、填精化气为核心，注重身心同治。具体出诊信息以馆内当日公示为准。",
+    faqs:[
+      {q:"男科问题都是肾虚吗？", a:"不全是。扶阳以辨证为本，命门火衰、寒湿下注、肾虚血瘀、湿热下注等皆可致病，须四诊合参后定法，不可一概峻补。"},
+      {q:"调理期间需要注意什么？", a:"忌久坐憋尿、受凉劳累，规律作息、适度运动，避免焦虑；具体须遵医嘱。"},
+      {q:"多久能见效？", a:"存在个体差异，改善循序渐进。一般按程复诊、动态调方，重在固本防复。"}
+    ]
+  }
+};
+
+/* 共病关系（协同诊疗） */
+FY.SPEC_COMORBIDITY = [
+  {key:"sleep+meta", a:"sleep", b:"meta", title:"睡眠障碍 × 代谢疾病",
+    desc:"睡眠呼吸暂停、慢性失眠与代谢综合征互为因果：缺氧与睡眠碎片化管理激素紊乱（胰岛素抵抗），脾阳不运则痰湿内生、膏脂堆积；代谢异常又扰神明、碍阳归位。",
+    synergy:"以「温阳运脾、引阳入阴」同治——桂枝法运中化痰以助代谢，温潜安神以复寤寐，一法两顾。"},
+  {key:"meta+men", a:"meta", b:"men", title:"代谢疾病 × 男科康复",
+    desc:"代谢病（糖尿病 / 高尿酸 / 肥胖）常合并男性功能障碍（痿证、下焦湿阻），二者同根于阳气虚馁、运化失司。",
+    synergy:"温命门以兴阳道、运中焦以化膏脂，脾肾同调，标本兼顾。"},
+  {key:"sleep+men", a:"sleep", b:"men", title:"睡眠障碍 × 男科康复",
+    desc:"睡眠为阳气休养与睾酮恢复之要；失眠则阳根不固、命门火衰，男科功能随之下陷，形成恶性循环。",
+    synergy:"引阳入阴以充养、温肾固本以兴阳，寤寐与阳道并复。"}
+];
+
+var ICONS = {
+  sleep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-6 6c0 3 2 4.5 2 6h8c0-1.5 2-3 2-6a6 6 0 0 0-6-6z"/><path d="M9 21h6M12 15v3"/></svg>',
+  meta:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c0-1.5 1-2 2-2s2 .5 2 2-1 2-2 2-2 .5-2 2z"/><path d="M4 13c0-1.5 1-2 2-2s2 .5 2 2-1 2-2 2-2 .5-2 2z"/><path d="M4 19c0-1.5 1-2 2-2s2 .5 2 2-1 2-2 2-2 .5-2 2z"/><path d="M14 7h6M14 13h6M14 19h6"/></svg>',
+  male:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7" r="4"/><path d="M3 21c0-4 3-6 7-6s7 2 7 6"/></svg>'
+};
+
+function iconSVG(label){
+  var s='stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round"';
+  var icons={
+    '失眠':'<circle cx="10" cy="10" r="6" '+s+'/><path d="M10 6.5v4l2.5 1.5" '+s+'/>',
+    '易醒':'<path d="M10 3L5 17h10L10 3z" '+s+'/><circle cx="10" cy="13" r="1.5" fill="currentColor" stroke="none"/>',
+    '早醒':'<circle cx="10" cy="10" r="4" '+s+'/><path d="M10 2.5v2.5M10 15v2.5M2.5 10h2.5M15 10h2.5" '+s+'/>',
+    '嗜睡':'<path d="M4 12a6 6 0 0112 0" '+s+'/><circle cx="10" cy="12" r="2" fill="currentColor" stroke="none"/>',
+    '节律紊乱':'<path d="M2 10c2-4 4-4 8 0s4 4 8 0" '+s+'/>',
+    '药物相关':'<rect x="4" y="6" width="12" height="8" rx="2" '+s+'/><path d="M10 6v8M7 10h6" '+s+'/>',
+    '呼吸暂停':'<path d="M3 8h14M3 12h14" '+s+'/><path d="M7 8v4M13 8v4" '+s+'/>',
+    '发作性睡病':'<circle cx="10" cy="10" r="7" '+s+'/><path d="M7 10h6" '+s+'/>',
+    '日间嗜睡':'<circle cx="10" cy="10" r="6" '+s+'/><path d="M10 7v3.5M10 13.5h.01" '+s+'/>',
+    '高血糖':'<circle cx="10" cy="10" r="6" '+s+'/><text x="10" y="13.5" text-anchor="middle" font-size="7" fill="currentColor" stroke="none">糖</text>',
+    '高血压':'<path d="M6 6h8M6 10h8M6 14h8M8 6v8M12 6v8" '+s+'/>',
+    '血脂异常':'<path d="M5 5l5 5 5-5M5 15l5-5 5 5" '+s+'/><circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/>',
+    '尿酸异常':'<path d="M10 3v14M6 7h8M6 13h8" '+s+'/>',
+    '脂肪肝':'<path d="M5 8c2-3 8-3 10 0v4c-2 3-8 3-10 0z" '+s+'/><path d="M8 10h4" '+s+'/>',
+    '中心肥胖':'<circle cx="10" cy="10" r="6" '+s+'/><path d="M7 10a3 3 0 006 0" '+s+'/>',
+    '脾胃病':'<path d="M5 8h10v6a3 3 0 01-3 3H8a3 3 0 01-3-3z" '+s+'/><path d="M7 5v3M13 5v3" '+s+'/>',
+    '糖前状态':'<circle cx="10" cy="10" r="6" '+s+'/><path d="M10 6v4l2 2" '+s+'/><circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/>',
+    '性功能障碍':'<circle cx="10" cy="10" r="6" '+s+'/><path d="M10 6v4M10 14h.01" '+s+'/>',
+    '慢性前列腺炎':'<path d="M5 10a5 5 0 0110 0v3a2 2 0 01-2 2H7a2 2 0 01-2-2z" '+s+'/><path d="M8 8v4M12 8v4" '+s+'/>',
+    '前列腺增生':'<circle cx="10" cy="10" r="4" '+s+'/><circle cx="10" cy="10" r="6" '+s+'/>',
+    '男性更年期':'<circle cx="10" cy="10" r="6" '+s+'/><path d="M7 8a3 3 0 016 0M7 12a3 3 0 006 0" '+s+'/>',
+    '术后调养':'<path d="M5 10h10M10 5v10" '+s+'/><circle cx="10" cy="10" r="2" '+s+'/>',
+    '男性不育':'<circle cx="10" cy="10" r="6" '+s+'/><path d="M8 12a3 3 0 004 0" '+s+'/>'
+  };
+  var def='<circle cx="10" cy="10" r="6" '+s+'/><circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/>';
+  return '<svg viewBox="0 0 20 20">'+(icons[label]||def)+'</svg>';
+}
+
+function renderDept(){
+  var grid = $("#deptGrid");
+  grid.innerHTML = FY.DATA.dept.map(function(s){
+    return '<article class="spec-card reveal" data-spec="'+s.id+'"'+(s.href?' data-href="'+s.href+'"':'')+' role="button" tabindex="0" aria-label="查看'+s.name+'专病详情">'
+      + '<h3>'+s.name+'专病</h3>'
+      + '<div class="spec-sub">'+s.sub+' · 共病同治</div>'
+      + '<div class="spec-icons">'+s.icons.map(function(i){return '<div class="spec-icon" title="'+i+'">'+iconSVG(i)+'<span>'+i+'</span></div>';}).join("")+'</div>'
+      + '<div class="spec-count"><span class="spec-arrow">查看专病 →</span></div>'
+      + '</article>';
+  }).join("");
+}
+
+function renderFAQ(){
+  var list = $("#faqList");
+  list.innerHTML = FY.DATA.faq.map(function(f){
+    return '<div class="faq-item">'
+      + '<button class="faq-q" aria-expanded="false">'+f.q+'<span class="faq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>'
+      + '<div class="faq-a"><div><div class="faq-a-inner">'+f.a+'</div></div></div>'
+      + '</div>';
+  }).join("");
+  $$(".faq-item").forEach(function(item){
+    var q = $(".faq-q", item);
+    q.addEventListener("click", function(){
+      var open = item.classList.toggle("open");
+      q.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+}
+
+function initReveal(){
+  var els = $$(".reveal, .spec-card");
+  if(!("IntersectionObserver" in window)){ els.forEach(function(e){e.classList.add("in");}); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+  els.forEach(function(e){ io.observe(e); });
+}
+
+/* 三大专病卡片 · 3D 倾斜（仅指针设备，尊重 reduced-motion） */
+function setupTilt(){
+  if(!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  $$(".spec-card").forEach(function(card){
+    card.addEventListener("mousemove", function(e){
+      var r = card.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width;
+      var py = (e.clientY - r.top) / r.height;
+      var rx = (py - 0.5) * -8;
+      var ry = (px - 0.5) * 8;
+      card.classList.add("tilting");
+      card.style.transform = "perspective(800px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-8px) scale(1.02)";
+    });
+    card.addEventListener("mouseleave", function(){ card.style.transform = ""; card.classList.remove("tilting"); });
+  });
+}
+
+
+/* ============ 专病详情（集成设计方案 · 统一跳转逻辑） ============ */
+function featIcon(k){
+  var s='stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"';
+  var m={
+    moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" '+s+'/>',
+    leaf:'<path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 16-9 0 9-4 16-9 16z" '+s+'/><path d="M4 20c4-2 7-5 9-9" '+s+'/>',
+    flame:'<path d="M12 3c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 1-3 2-4 .5 1 1.5 1.5 2-4z" '+s+'/>',
+    needle:'<path d="M12 3v13" '+s+'/><path d="M9 6h6" '+s+'/><circle cx="12" cy="18" r="2" '+s+'/>',
+    book:'<path d="M4 5a2 2 0 0 1 2-2h5v16H6a2 2 0 0 0-2 2z" '+s+'/><path d="M20 5a2 2 0 0 0-2-2h-5v16h5a2 2 0 0 1 2 2z" '+s+'/>',
+    cycle:'<path d="M4 12a8 8 0 0 1 13-6m3 0v4h-4" '+s+'/><path d="M20 12a8 8 0 0 1-13 6m-3 0v-4h4" '+s+'/>',
+    pulse:'<path d="M3 12h4l2-6 4 12 2-6h6" '+s+'/>'
+  };
+  return '<svg viewBox="0 0 24 24" aria-hidden="true">'+(m[k]||m.book)+'</svg>';
+}
+
+function renderSpecDetail(id){
+  var S = FY.SPECIALTY_DETAIL[id];
+  if(!S) return;
+  var panel = $("#spdPanel");
+  var stats = S.stats.map(function(st){return '<div class="spd-stat"><strong>'+st[0]+'</strong><span>'+st[1]+'</span></div>';}).join("");
+  var mech = S.mech.map(function(m){return '<span class="spd-chip spd-chip--mech">'+m+'</span>';}).join("");
+  var inds = S.indications.map(function(i){return '<span class="spd-chip">'+i+'</span>';}).join("");
+  var feats = S.features.map(function(f){return '<div class="spd-feat">'+featIcon(f.i)+'<div><h5>'+f.t+'</h5><p>'+f.d+'</p></div></div>';}).join("");
+  var yes = S.yes.map(function(y){return '<li>'+y+'</li>';}).join("");
+  var no = S.no.map(function(n){return '<li>'+n+'</li>';}).join("");
+  var cos = FY.SPEC_COMORBIDITY.filter(function(c){return c.a===id || c.b===id;});
+  var coHtml = cos.map(function(c){
+    return '<div class="spd-co-card">'
+      + '<h5>'+c.title+'</h5>'
+      + '<p class="spd-co-desc">'+c.desc+'</p>'
+      + '<button type="button" class="spd-co-toggle" data-co="'+c.key+'" aria-expanded="false">查看合并诊疗思路 ▾</button>'
+      + '<div class="spd-co-syn" id="co-'+c.key+'" hidden><span class="spd-co-tag">合并诊疗思路</span>'+c.synergy+'</div>'
+      + '</div>';
+  }).join("");
+  var patho = (S.pathogenesis||[]).map(function(p){return '<div class="spd-mechitem"><h5>'+p.t+'</h5><p>'+p.d+'</p></div>';}).join("");
+  var symp = (S.symptoms||[]).map(function(s){return '<span class="spd-chip">'+s+'</span>';}).join("");
+  var dx = S.diagnosis || {tcm:[],west:[]};
+  var dxTcm = (dx.tcm||[]).map(function(x){return '<li>'+x+'</li>';}).join("");
+  var dxWest = (dx.west||[]).map(function(x){return '<li>'+x+'</li>';}).join("");
+  var tx = (S.treatment||[]).map(function(t){return '<div class="spd-tx-item"><span class="spd-tx-phase">'+t.phase+'</span><h5>'+t.t+'</h5><p>'+t.d+'</p></div>';}).join("");
+  var flow = (S.flow||[]).map(function(f,i){return '<li><span class="spd-flow-n">'+(i+1)+'</span>'+f+'</li>';}).join("");
+  var prec = (S.precautions||[]).map(function(p){return '<li>'+p+'</li>';}).join("");
+  var sci = (S.science||[]).map(function(s,i){return '<div class="spd-sci-card"><button type="button" class="spd-co-toggle" data-sci="'+i+'" aria-expanded="false">'+s.name+' ▾</button><div class="spd-co-syn" hidden><span class="spd-co-tag">疾病科普</span>'+s.desc+'</div></div>';}).join("");
+  var faqs = (S.faqs||[]).map(function(f){return '<div class="spd-faq"><button type="button" class="spd-faq-q" aria-expanded="false">'+f.q+'<span>+</span></button><div class="spd-faq-a" hidden>'+f.a+'</div></div>';}).join("");
+  panel.innerHTML =
+    '<header class="spd-hero">'
+    + '<div class="spd-eyebrow">'+S.en+'</div>'
+    + '<h2 class="spd-name">'+S.name+'专病门诊</h2>'
+    + '<p class="spd-tag">'+S.tag+'</p>'
+    + '<div class="spd-stats">'+stats+'</div>'
+    + '</header>'
+    + '<section class="spd-sec"><h3 class="spd-h3">核心诊疗理念</h3><p class="spd-phil">'+S.philosophy+'</p><div class="spd-mech">'+mech+'</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">专病定义</h3><p class="spd-def">'+(S.definition||S.philosophy)+'</p></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">发病机制 · 中西医互参</h3><div class="spd-mechlist">'+patho+'</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">典型症状</h3><div class="spd-ind">'+symp+'</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">诊断标准</h3><div class="spd-dx">'
+    +   '<div class="spd-dx-col spd-dx-tcm"><h4>中医辨证</h4><ul>'+dxTcm+'</ul></div>'
+    +   '<div class="spd-dx-col spd-dx-west"><h4>西医诊断</h4><ul>'+dxWest+'</ul></div>'
+    + '</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">规范化治疗方案</h3><div class="spd-tx">'+tx+'</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">适应症范围</h3><div class="spd-ind">'+inds+'</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">治疗特色 · 扶阳理论的应用</h3><div class="spd-feat-grid">'+feats+'</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">适合人群与不适用情形</h3><div class="spd-fit">'
+    +   '<div class="spd-fit-col spd-fit-yes"><h4>适合人群</h4><ul>'+yes+'</ul></div>'
+    +   '<div class="spd-fit-col spd-fit-no"><h4>不适用情形</h4><ul>'+no+'</ul></div>'
+    + '</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">就诊流程</h3><ul class="spd-flow">'+flow+'</ul></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">注意事项</h3><ul class="spd-prec">'+prec+'</ul></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">相关疾病科普</h3><div class="spd-sci">'+sci+'</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">专家团队</h3><div class="spd-team">'+S.team+'</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">常见问题</h3><div class="spd-faq">'+faqs+'</div></section>'
+    + '<section class="spd-sec"><h3 class="spd-h3">共病同治 · 协同诊疗</h3><div class="spd-co">'+coHtml+'</div></section>'
+    + '<footer class="spd-cta">'
+    +   '<button type="button" class="spd-btn spd-btn--primary" data-spd-book>预约「'+S.name+'」门诊</button>'
+    +   '<p class="spd-note">本页为学术科普，具体调理须由执业医师四诊合参、一人一方。</p>'
+    + '</footer>';
+  $("#spdTitle").textContent = S.name + "专病门诊";
+  panel.scrollTop = 0;
+}
+
+function openSpec(id){
+  renderSpecDetail(id);
+  var m = $("#spdModal");
+  m.hidden = false;
+  document.body.style.overflow = "hidden";
+  var c = $(".spd-close", m);
+  if(c) c.focus();
+}
+function closeSpec(){
+  var m = $("#spdModal");
+  m.hidden = true;
+  document.body.style.overflow = "";
+}
+
+function initSpecDetail(){
+  var modal = $("#spdModal");
+  if(!modal) return;
+  /* 统一跳转入口：任何带 data-spec 的元素点击即打开对应专病详情 */
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("[data-spec]");
+    if(t){
+      e.preventDefault();
+      var href = t.getAttribute("data-href");
+      if(href){ location.href = href; return; }
+      openSpec(t.getAttribute("data-spec"));
+    }
+  });
+  document.addEventListener("keydown", function(e){
+    if((e.key==="Enter" || e.key===" ") && e.target.matches && e.target.matches("[data-spec]")){
+      e.preventDefault();
+      var href = e.target.getAttribute("data-href");
+      if(href){ location.href = href; return; }
+      openSpec(e.target.getAttribute("data-spec"));
+    }
+  });
+  modal.addEventListener("click", function(e){ if(e.target.closest("[data-spd-close]")) closeSpec(); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape" && !modal.hidden) closeSpec(); });
+  $("#spdPanel").addEventListener("click", function(e){
+    var b = e.target.closest("[data-co]");
+    if(b){
+      var el = document.getElementById("co-"+b.getAttribute("data-co"));
+      if(el){ var open = el.hidden; el.hidden = !open; b.setAttribute("aria-expanded", open?"true":"false"); b.textContent = open ? "收起合并诊疗思路 ▴" : "查看合并诊疗思路 ▾"; }
+    }
+    var s = e.target.closest("[data-sci]");
+    if(s){
+      var el = s.parentElement.querySelector(".spd-co-syn");
+      if(el){
+        var nowHidden = el.hidden;
+        el.hidden = !nowHidden;
+        s.setAttribute("aria-expanded", String(!nowHidden));
+        s.textContent = s.textContent.replace(/[ ▾▴]+$/, "") + (nowHidden ? " ▴" : " ▾");
+      }
+    }
+    var fq = e.target.closest(".spd-faq-q");
+    if(fq){
+      var item = fq.parentElement;
+      var a = item.querySelector(".spd-faq-a");
+      if(a){
+        var nowHidden = a.hidden;
+        a.hidden = !nowHidden;
+        fq.setAttribute("aria-expanded", String(!nowHidden));
+        item.classList.toggle("open", !nowHidden);
+      }
+    }
+    if(e.target.closest("[data-spd-book]")){
+      closeSpec();
+      var qm = $("#qrModal");
+      if(qm){ qm.hidden = false; document.body.style.overflow = "hidden"; }
+    }
+  });
+}
+
+function boot(){
+  renderDept();
+  renderFAQ();
+  initReveal();
+  setupTilt();
+  initSpecDetail();
+}
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", boot);
+else boot();
+})();
+</script>
+</body>
+</html>
