@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light" data-page-node-id="z1Myi13ZpVTKlBy7h7FQy0">
+<head data-page-node-id="tO6IWf3dZvotviCIhXYdtA">
+<meta charset="UTF-8" data-page-node-id="lknA6tR9KMg6nZFnbzmICn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="a4K5IxQGyQLUe1C4Ne49aY">
+<title>代谢疾病门诊 · 临床参考文档 · 扶阳中医馆</title>
+<meta name="description" content="扶阳中医馆代谢疾病门诊临床参考文档，覆盖糖尿病及其并发症、代谢相关脂肪性肝病、痛风、消化系统疾病及恶性肿瘤，依中华中医药学会《中药新药研发用临床需求清单》整理。" data-page-node-id="XssaVlTMGHVuqmaniEDBGB">
+<script>/* 预绘同步主题应用 · 与首页/概述共用 fy:theme 键，无 FOUC */
+try{ var __s=localStorage.getItem("fy:theme"); if(__s==="dark"||__s==="light") document.documentElement.setAttribute("data-theme",__s); }catch(e){}</script>
+<style>
+:root{
+  --cinnabar:#f2542d; --gold:#f3b15f;
+  --brand-500:#F2741B; --brand-600:#d65f1a; --brand-700:#b54c12;
+  --brand-50:#FDF1E7; --brand-100:#FBE3CE;
+  --sage:#5CA99A; --sage-deep:#3f8376; --sage-soft:#EAF3F0;
+  --bg:#F7F2EB; --paper:#FBF8F3; --paper-2:#F2ECE2; --surface:#fffdf9;
+  --ink:#6B6155; --ink-2:#4A4036; --ink-3:#998A74;
+  --line:#E7DECD; --line-2:#D8CBB6;
+  --warning:#C0752E; --success:#5CA99A;
+  --grad-brand:linear-gradient(135deg,#f2542d,#f3b15f);
+  --shadow-sm:0 1px 3px rgba(80,60,30,.06);
+  --shadow-md:0 6px 18px rgba(80,60,30,.10);
+  --shadow-lg:0 18px 48px rgba(80,60,30,.16);
+  --radius:20px; --radius-sm:12px;
+  --ease-out-quart:cubic-bezier(.22,1,.36,1);
+}
+[data-theme="dark"]{
+  --bg:#1A1612; --paper:#211C17; --paper-2:#292219; --surface:#282218;
+  --ink:#D8CFC2; --ink-2:#EDE6DC; --ink-3:#A89A88;
+  --line:#3A3228; --line-2:#4A4034;
+  --brand-50:#2A1D13; --brand-100:#3A2717;
+  --sage-soft:#1E2C28;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.4);
+  --shadow-md:0 6px 18px rgba(0,0,0,.5);
+  --shadow-lg:0 18px 48px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);background:color-mix(in srgb,var(--paper) 82%,transparent);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.05rem;color:var(--ink-2)}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--grad-brand);display:grid;place-items:center;color:#fff;font-size:1.1rem;flex:none;box-shadow:var(--shadow-sm)}
+.theme-btn{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer;font-size:1.1rem;display:grid;place-items:center;transition:transform .2s var(--ease-out-quart)}
+.theme-btn:hover{transform:translateY(-1px)}
+[data-theme="light"] .theme-btn .icon-moon{display:none}
+[data-theme="dark"] .theme-btn .icon-sun{display:none}
+.topbar-actions{display:flex;align-items:center;gap:10px}
+.home-link{font-size:.88rem;color:var(--brand-600);font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);transition:transform .18s var(--ease-out-quart),border-color .18s}
+.home-link:hover{transform:translateY(-1px);border-color:var(--brand-500)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.hero{padding:52px 0 36px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.16em;color:var(--brand-600);font-weight:600;text-transform:uppercase;margin-bottom:14px}
+.kicker::before{content:"";width:22px;height:2px;background:var(--grad-brand);border-radius:2px}
+.hero h1{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;color:var(--ink-2);margin:0 0 14px;line-height:1.25}
+.hero .sub{font-size:1.02rem;color:var(--ink);max-width:64ch}
+.notice{margin:22px 0 0;padding:18px 20px;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--radius-sm);background:var(--surface);font-size:.92rem;color:var(--ink);box-shadow:var(--shadow-sm)}
+.notice strong{color:var(--ink-2)}
+.toc{margin:28px 0 44px;padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-sm)}
+.toc h2{font-size:.82rem;letter-spacing:.18em;color:var(--ink-3);font-weight:700;margin:0 0 6px;text-transform:uppercase}
+.toc-group{margin-top:16px}
+.toc-group:first-of-type{margin-top:12px}
+.toc-group h3{font-size:.8rem;letter-spacing:.12em;color:var(--brand-600);font-weight:700;margin:0 0 8px}
+.toc-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.toc-list a{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:10px;text-decoration:none;font-size:.92rem;color:var(--ink-2);border:1px solid var(--line);background:var(--paper);transition:transform .18s var(--ease-out-quart),border-color .18s,box-shadow .18s}
+.toc-list a:hover{transform:translateY(-2px);border-color:var(--brand-500);box-shadow:var(--shadow-sm)}
+.toc-list a .no{flex:none;width:20px;height:20px;border-radius:6px;background:var(--brand-50);color:var(--brand-600);font-size:.72rem;font-weight:700;display:grid;place-items:center}
+.toc-list a .tag{flex:none;margin-left:auto;font-size:.68rem;color:var(--ink-3);letter-spacing:.04em}
+article.dz{margin:0 0 40px;padding:32px 34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-sm);scroll-margin-top:80px}
+.dz-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.dz-num{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:.82rem;color:var(--gold);letter-spacing:.08em;font-weight:700}
+.dz-head h2{font-size:clamp(1.3rem,2.6vw,1.6rem);font-weight:800;color:var(--ink-2);margin:0}
+.dz-src{font-size:.8rem;color:var(--ink-3);margin:2px 0 18px}
+.dz-src b{color:var(--sage-deep);font-weight:600}
+.dz-meta{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;letter-spacing:.08em;color:var(--brand-600);background:var(--brand-50);border:1px solid var(--brand-100);border-radius:999px;padding:3px 12px;margin-bottom:16px}
+.dz-meta.unlisted{color:var(--ink-3);background:var(--paper-2);border-color:var(--line)}
+.block{margin:0 0 18px}
+.block:last-child{margin-bottom:0}
+.block h3{display:flex;align-items:center;gap:8px;font-size:.98rem;font-weight:700;color:var(--ink-2);margin:0 0 8px}
+.block h3::before{content:"";width:4px;height:1em;background:var(--grad-brand);border-radius:2px}
+.block p{margin:0 0 8px;font-size:.94rem;color:var(--ink)}
+.block p:last-child{margin-bottom:0}
+.block ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.block li{position:relative;padding-left:18px;font-size:.93rem;color:var(--ink)}
+.block li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.block .em{color:var(--brand-600);font-weight:600;font-style:normal}
+.data-tag{display:inline-block;font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:.8rem;color:var(--sage-deep);background:var(--sage-soft);border-radius:6px;padding:1px 7px;margin-right:2px}
+.caveat{font-size:.86rem;color:var(--ink-3);background:var(--paper-2);border:1px dashed var(--line-2);border-radius:10px;padding:12px 14px;margin-top:10px}
+.caveat b{color:var(--ink-2)}
+.footer{margin-top:48px;padding:34px 0 56px;border-top:1px solid var(--line)}
+.footer h2{font-size:1.02rem;font-weight:700;color:var(--ink-2);margin:0 0 12px}
+.footer ol{margin:0 0 20px;padding-left:20px;color:var(--ink);font-size:.9rem}
+.footer li{margin-bottom:6px}
+.legal{font-size:.82rem;color:var(--ink-3);line-height:1.7;padding-top:16px;border-top:1px solid var(--line)}
+.backtop{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer;font-size:1.1rem;box-shadow:var(--shadow-md);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s var(--ease-out-quart);z-index:40}
+.backtop.show{opacity:1;pointer-events:auto}
+.backtop:hover{transform:translateY(-3px)}
+@media (max-width:560px){
+  .hero{padding:36px 0 24px}
+  article.dz{padding:24px 20px;margin-bottom:24px}
+  .toc-list{grid-template-columns:1fr}
+  .topbar-inner,.wrap{padding-left:16px;padding-right:16px}
+}
+@media print{
+  .topbar,.backtop,.theme-btn{display:none}
+  article.dz{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+  body{background:#fff;color:#222}
+}
+</style>
+</head>
+<body data-page-node-id="4d9yjQYY0DQSG1y2ybpNPV">
+
+<header class="topbar" data-page-node-id="Zr0ONLc2qfJwhoigeY9Q7x">
+  <div class="topbar-inner" data-page-node-id="U9xu039ay97lQT7AneNPM6">
+    <div class="brand" data-page-node-id="7mFkxy3fbr1j634VZsmyom"><span class="brand-mark" data-page-node-id="eojY79miKGRR8E2KnVAOZD">阳</span>扶阳中医馆 · 代谢疾病门诊</div>
+    <div class="topbar-actions" data-page-node-id="JpmWjseRI1G1mpK4MAYBFA">
+      <a class="home-link" href="metabolism-overview.html" data-page-node-id="2hfaevk4euPrzl5QAkuGtg">← 返回概述</a>
+      <button class="theme-btn" id="themeBtn" aria-label="切换明暗主题" title="切换主题" data-page-node-id="Bon1lAnqMr5AbwVGXABHvh">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-page-node-id="j8BozYO1IwlLHAk02Y7E4P"><circle cx="12" cy="12" r="4" data-page-node-id="UlOTwnPVy4inLSPiFJAa5c"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-page-node-id="IhZHgsgUhG6UQ0jI5tdoiR"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="X6hokmhbVjLyCsntuXCja0"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" data-page-node-id="cWu8gNALZHfkUE9u8O1xyZ"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" data-page-node-id="QwT01wTC2BVWHX50BCWPpp">
+  <section class="hero" data-page-node-id="4qfthEphEdZNadsS59Ap91">
+    <span class="kicker" data-page-node-id="SFCoiZ5PW3N6UIESuKvSPK">Clinical Reference</span>
+    <h1 data-page-node-id="UrjCeOKSjxv3nYdEfpFzpn">代谢疾病门诊 · 临床参考文档</h1>
+    <p class="sub" data-page-node-id="Qf7rXbMWM1enV09m9BzbJ7">按疾病分章节整理的临床速查文档，覆盖糖尿病及其并发症、代谢相关脂肪性肝病、痛风、消化系统疾病与恶性肿瘤，供门诊查阅使用。</p>
+    <div class="notice" data-page-node-id="M1AdEkH3J48H2H0pTqO4Sm">
+      <strong data-page-node-id="IcPC7Ob6B27z9wen770WHW">数据来源与收录说明：</strong>本页内容整理自中华中医药学会《中药新药研发用临床需求清单》（第一、二、三批，2023–2026 年发布）。原清单共收录 26 个病种，其中与代谢疾病门诊对应、且清单<b data-page-node-id="432QzP4HOWTSh225AZgfaO">单列成章</b>者为 8 种；「<b data-page-node-id="S4Fd8HWa5Oqd2I0Uw1638Y">糖尿病</b>」清单未单列，内容提炼自「糖尿病肾脏疾病」「糖尿病足部溃疡」两章的基础病背景并已标注；「<b data-page-node-id="zDS7betneMqI0ZnGPOAVOo">高血压</b>」清单未收录（仅作为危险因素提及一次），本节如实标注、不引清单外数据。所有流行病学数字均逐条对照清单原文，未作增删。
+    </div>
+  </section>
+
+  <nav class="toc" aria-label="文档目录" data-page-node-id="E86afFBPRCY2PJ45fKnsU4">
+    <h2 data-page-node-id="XyLk4bPJcA4BqfSXDHvpIE">目录</h2>
+    <div class="toc-group" data-page-node-id="STGWJmsDG9J5UTwNfFvLFi"><h3 data-page-node-id="auhXJUsfWjndEVHTEkcv2r">糖尿病及其并发症</h3>
+      <div class="toc-list" data-page-node-id="df7MxAhMxDzXVEB4aGckEi">
+        <a href="#dz-dm" data-page-node-id="16yYUgn5jlgGkneMzotZ70"><span class="no" data-page-node-id="J7IJL6OQAG91QxY9vA1eFK">1</span>糖尿病<span class="tag" data-page-node-id="nO6EHsazWFVUZKuEjjMm0L">未单列·提炼</span></a>
+        <a href="#dz-dkd" data-page-node-id="zoPXT6ALDxBhHV4uSfJku8"><span class="no" data-page-node-id="HBVhHgikipiouQwtT1gtc8">2</span>糖尿病肾脏疾病<span class="tag" data-page-node-id="n0o5infRbxUvmBXNQJrDW2">第二批</span></a>
+        <a href="#dz-dfu" data-page-node-id="2FnIN5DfnM4FSLmumkuVNQ"><span class="no" data-page-node-id="I831SeIH25BBr4UB3TsmAA">3</span>糖尿病足部溃疡<span class="tag" data-page-node-id="FP8CyYjzunTIs9bLy8kr0F">第二批</span></a>
+      </div>
+    </div>
+    <div class="toc-group" data-page-node-id="m0xg22vaKy9AGNx1IjS1TM"><h3 data-page-node-id="m9IHMbq341IKDCJJXjhdIs">代谢与内分泌</h3>
+      <div class="toc-list" data-page-node-id="gK8Nyyjf8wXWgU1I3OWxYC">
+        <a href="#dz-mafld" data-page-node-id="6B615g8ZQN0yfNIEqwLy8y"><span class="no" data-page-node-id="hnkPoLAhWeATawk1XEI5VK">4</span>代谢相关脂肪性肝病<span class="tag" data-page-node-id="i1AECmR2E9XkWYseb4Cd3S">第二批</span></a>
+        <a href="#dz-gout" data-page-node-id="FstOyjX9vRzlmVAouwwAHs"><span class="no" data-page-node-id="vFnIYjd2SluZSdhDHc9SLd">5</span>痛风<span class="tag" data-page-node-id="W2Wy9F7qRES26FW4GZ4gxw">第三批</span></a>
+        <a href="#dz-htn" data-page-node-id="tWxKcwfaVVWIIAkwXcukXb"><span class="no" data-page-node-id="lrfIEWPaH2F62GPdainLNF">6</span>高血压<span class="tag" data-page-node-id="y6nhGEvGUJ58TlPvzxEan3">未收录</span></a>
+      </div>
+    </div>
+    <div class="toc-group" data-page-node-id="Ta3jHGjoFb7Zv6fiDJxpT3"><h3 data-page-node-id="4m1DZCPcEWUI7CH7nUtGEE">消化系统</h3>
+      <div class="toc-list" data-page-node-id="Yf1bgJaGt5bWOJfXiZARxh">
+        <a href="#dz-gerd" data-page-node-id="19rnHDOT97pVHwtE29LeoB"><span class="no" data-page-node-id="kVeua8aISvQGTPq68Dzgkc">7</span>胃食管反流病<span class="tag" data-page-node-id="JyGQ19wTpyTDIcUiiPpWGu">第一批</span></a>
+        <a href="#dz-uc" data-page-node-id="1SpJduJIkUGteUCcaKBczw"><span class="no" data-page-node-id="PWznepDKF6El1UEvWcGPSb">8</span>溃疡性结肠炎<span class="tag" data-page-node-id="K8iJzmhZR7SemL5GwMkcem">第三批</span></a>
+        <a href="#dz-cag" data-page-node-id="ccU3MqKm4zsSPEsW5cNQ2S"><span class="no" data-page-node-id="EzCUYDkJbkmyrNapVoraPt">9</span>萎缩性胃炎及其癌前病变<span class="tag" data-page-node-id="kcBHYTz8Y3ZDWSGuCRwm1F">第二批</span></a>
+      </div>
+    </div>
+    <div class="toc-group" data-page-node-id="486QAGqzWuNDRXqe2GJhfY"><h3 data-page-node-id="aDkC4FDsIVAepeNz7WrMT5">肿瘤</h3>
+      <div class="toc-list" data-page-node-id="hSkAsBjNXFlOUY9175JYjl">
+        <a href="#dz-cancer" data-page-node-id="lrCx7gwMtmX80lWQFKAJSi"><span class="no" data-page-node-id="Xf7RI8lXt9JPLuGJPgk3Ax">10</span>恶性肿瘤<span class="tag" data-page-node-id="4FJGBEgSDanIN0C7N5qnEd">第一批</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main data-page-node-id="qdDqwBFFNZ5BXrcVT6bswP">
+
+    <!-- 1 糖尿病 -->
+    <article class="dz" id="dz-dm" data-page-node-id="9SF0QEdeIskmZiQJio83us">
+      <div class="dz-head" data-page-node-id="aqbcvwD7pMFAQiZmzALVFG"><span class="dz-num" data-page-node-id="Q1lUpLfGGEdH05YEkJMUk1">01</span><h2 data-page-node-id="KEXmF0DHInmnwtmJs6gFOn">糖尿病</h2></div>
+      <div class="dz-src" data-page-node-id="MbFuJSvqlBdkLscZDWC4i5"><b data-page-node-id="4ov5mXS7y5zFMHybqbhXcA">清单未单列本章</b> · 内容提炼自「糖尿病肾脏疾病」「糖尿病足部溃疡」两章</div>
+      <span class="dz-meta unlisted" data-page-node-id="XAYLrHuDwEwsRPddfIYCL1">未单列 · 基础病背景</span>
+      <div class="block" data-page-node-id="FxUY8o6MgXTdGnt31PPUjQ">
+        <h3 data-page-node-id="6OMvIB4lWAPL73pSkgFYwn">概述</h3>
+        <p data-page-node-id="Pi42983kGjw1ChmsxIeqV9">《中药新药研发用临床需求清单》未将糖尿病单独列为病种，其内容散见于并发症章节。据清单：糖尿病是最常见的慢性代谢性疾病，其并发症是清单关注重点——<span class="data-tag" data-page-node-id="CY62NMEsIdBrpwc6Rzd1dT">30%–40%</span>的糖尿病患者发展为糖尿病肾脏疾病（DKD）；糖尿病足部溃疡在糖尿病患者中发病率约<span class="data-tag" data-page-node-id="GzVZO5SrW4SvqFN95WOMyf">15%–25%</span>，随病程延长与血糖控制不佳而显著增加。</p>
+      </div>
+      <div class="block" data-page-node-id="FSpaeA1M2oBs6DmT4h4qGp">
+        <h3 data-page-node-id="hmI31w0BHDNS8yTJUSsSf8">临床表现</h3>
+        <p data-page-node-id="kNyLfU3EanYQtXpLiGtKFW">清单未单列糖尿病的典型症状；其并发症表现见「糖尿病肾脏疾病」「糖尿病足部溃疡」两节（早期微量白蛋白尿／足部溃疡、感染、坏疽等）。</p>
+      </div>
+      <div class="block" data-page-node-id="6RAqdHWraVL4JvCAB1FA5I">
+        <h3 data-page-node-id="RG8BuO0QFVkLsR3bXY9Bn5">诊断要点</h3>
+        <p data-page-node-id="M5iNUMg0O6YdEXV4JCzVYF">清单未载明糖尿病诊断标准；门诊可参考国家现行糖尿病诊断标准（血糖、糖化血红蛋白等），本页不引清单外数值。</p>
+      </div>
+      <div class="block" data-page-node-id="uxmSXrlEwS3IVugl0mh9Fx">
+        <h3 data-page-node-id="2wPxl5ARMYAs5QS9Wcwo45">治疗／管理方案</h3>
+        <ul data-page-node-id="e4pTqqlYHNtobJiWVgVRb2">
+          <li data-page-node-id="ZmcXbMW2ENIJFLdeV3fXY3">清单强调<span class="em" data-page-node-id="EJoyEiCjNm6FaGZqbtryAO">「控制危险因素（高血糖、高血压、脂代谢紊乱等）」</span>与生活方式干预，是糖尿病及其并发症管理的基础（引自 DKD 章节原文）。</li>
+          <li data-page-node-id="rHK4i3tlQ6UrX1zkacuaK0">具体降糖策略详见「糖尿病肾脏疾病」（首选心肾获益降糖药）与「糖尿病足部溃疡」（血糖控制为基础）两节。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="hWcbTmqf9tNoWGIuDZtFDm">
+        <h3 data-page-node-id="BoCr9fg6GfvshEPCkmcrrl">随访建议</h3>
+        <p data-page-node-id="tsw6q5tkIjZkudLly6AfBF">据清单 DFU 章节：中国糖尿病患者<span class="data-tag" data-page-node-id="YiD7ZQQI7DA96FPUmwpjGD">1 年内新发溃疡发生率 8.1%</span>、已愈溃疡患者<span class="data-tag" data-page-node-id="PLErB8NCe4DPadAbi3dlF4">1 年内复发率 31.6%</span>，提示需规律随访足部与肾脏相关指标。</p>
+      </div>
+    </article>
+
+    <!-- 2 糖尿病肾脏疾病 -->
+    <article class="dz" id="dz-dkd" data-page-node-id="QQ5e4AykF1MAXQJshAHuGg">
+      <div class="dz-head" data-page-node-id="o7x1h0NHKiTyGMRxO9DFji"><span class="dz-num" data-page-node-id="Rr8OwNhshnbYKxDkLgxfAu">02</span><h2 data-page-node-id="jfWuBGidMVuVFKt9koidos">糖尿病肾脏疾病（DKD）</h2></div>
+      <div class="dz-src" data-page-node-id="LVr1PbjlA7pgfsyQqZ2Nr8">研制单位：<b data-page-node-id="aWb057wEF42d8nlbylAb0F">中华中医药学会 肾病分会</b> · 第二批</div>
+      <span class="dz-meta" data-page-node-id="GQ96qgrLsnnv5AyN4QSGYO">第二批 · 肾病分会</span>
+      <div class="block" data-page-node-id="J15WnITuigVXY6DGtKu9dO">
+        <h3 data-page-node-id="gAqnSjbQavJCYZEDZIpMgr">概述</h3>
+        <p data-page-node-id="4IVMQSO2tFdB2MY6WTb2D9">DKD 是由糖尿病所致的慢性肾脏病（CKD），是糖尿病最常见的并发症，<span class="data-tag" data-page-node-id="crjflYNWrozkI3Mq2wTnro">30%–40%</span>的糖尿病患者发展为 DKD，也是 CKD 的常见类型。我国 2 型糖尿病合并 CKD 患病率为<span class="data-tag" data-page-node-id="wBOh0o22q2ZHENG9Fxz1FG">36%</span>；在中老年人群中，DKD 已成为终末期肾脏病（ESRD）的首要病因。</p>
+      </div>
+      <div class="block" data-page-node-id="kHUTKFQIqIVoSkmoH7mJS0">
+        <h3 data-page-node-id="BWsVUf188u76nwmTgTJcGM">临床表现</h3>
+        <ul data-page-node-id="eWhdFsFPUAPll8Aw0v66re">
+          <li data-page-node-id="1U5Kne2Bfr7H0KcBWXxHSk">早期主要表现为<span class="em" data-page-node-id="H3nrJ1opVJUuE1B7noVgo8">微量白蛋白尿排泄率增加</span>，缺少典型症状；</li>
+          <li data-page-node-id="GaxOliRa7IPFFCE8gRrw52">病程日久可表现为显性蛋白尿、水肿、高血压、肾功能损害等；</li>
+          <li data-page-node-id="ARxKdjkxRgg2GIJ2VTkAp4">进一步发展可发生终末期肾衰竭。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="LGpIKvqTrjTrXHJqgZlpoc">
+        <h3 data-page-node-id="o83EZTEXFNCWbqywAguz0A">诊断要点</h3>
+        <ul data-page-node-id="6B1U5zvW3XHeCKNeapIDga">
+          <li data-page-node-id="3UmzKBIiU3ACMsYRW1CDmC">采用 <span class="em" data-page-node-id="MMUmHKcs5c3ZkaXZ3gPEit">Mogensen 分期</span>：III 期＝早期糖尿病肾病期，IV 期＝临床糖尿病肾病期，V 期＝终末期肾病期；亦可按「病因—肾小球滤过率—白蛋白尿」分期描述严重程度。</li>
+          <li data-page-node-id="iML2yovcYjkul3pH5KLOKv">核心生物学指标：<span class="data-tag" data-page-node-id="EoZmC1hjcx1crut6kbEKgj">尿白蛋白/肌酐比值（UACR）</span>、<span class="data-tag" data-page-node-id="F0lv6g2TIKU8DDHNPfD9gG">24h 尿蛋白定量</span>、<span class="data-tag" data-page-node-id="6hDzRtYWEpZRSc87fjmuzU">eGFR</span>。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="6AD3e1wy9M0FI20tOfTSRd">
+        <h3 data-page-node-id="0z1BaP2EluG5M3vZjtToXZ">治疗／管理方案</h3>
+        <ul data-page-node-id="uEggPSYFlDiQoPy6Fwme29">
+          <li data-page-node-id="3gNO6wj6VP2vgMzt5vlENh"><span class="em" data-page-node-id="bkWFEH9uxrPTzFptaQMK0O">生活方式与营养</span>：合理控制体重、健康饮食、戒烟、适当运动；限制蛋白与钠摄入。</li>
+          <li data-page-node-id="VkNXwkuhvuLlcbdlE5CiF6"><span class="em" data-page-node-id="bYbsMHdWe2zNyGULmzpVnC">控制危险因素</span>：高血糖、高血压、脂代谢紊乱等，以及糖尿病教育。</li>
+          <li data-page-node-id="cf1B05YbCHQi0EPgVGvDkY"><span class="em" data-page-node-id="mWYar9BG97EhUAieHG41q3">降糖药</span>：首选具有心肾获益者——SGLT2 抑制剂（SGLT2i）、GLP-1 受体激动剂（GLP-1RA）；UACR 100~5000mg/g 且 eGFR 25~75 者，司美格鲁肽可延缓进展、降低肾脏复合终点与心血管死亡风险。</li>
+          <li data-page-node-id="1bHS4Q5nJNbIubyoXBiyFs"><span class="em" data-page-node-id="scycX59gBEHZHwpUjRjOvr">降压</span>：推荐 ACEI 或 ARB 类。</li>
+          <li data-page-node-id="qXE1BLCjgtuJOlB2QQ5hwh"><span class="em" data-page-node-id="1dxDY4r9MeIII2OEFWsCUp">非奈利酮</span>：适用于 UACR&gt;30mg/g 且 eGFR≥25、血钾≤5.0mmol/L 的 T2DM 合并 CKD 患者（在足量 ACEI/ARB 基础上），可显著降低肾脏复合终点及心血管风险；用药需监测血钾，<span class="em" data-page-node-id="NxJVjjcUzfbleCdW3ITT7F">血钾&gt;5.5mmol/L 应暂停</span>。</li>
+          <li data-page-node-id="4OAzc81IHHnQi2eGSNhp2k">治疗肾功能不全并发症、透析治疗等。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="WeTP5xPiH33USZUghAoPnu">
+        <h3 data-page-node-id="f8qHRGYzOzAjGw83nEbpQT">随访建议</h3>
+        <p data-page-node-id="9GpyLkTxXYVt5tSbyOQ7EF">清单提示 DKD<span class="em" data-page-node-id="cEjvV76u3KzOv6C03ZDelB">起病隐匿</span>，一旦进入大量蛋白尿期后，进展至 ESRD 的速度约为其他肾脏病变的<span class="data-tag" data-page-node-id="fEGSo7zVYVnmqlRHmIxDFK">14 倍</span>，且合并糖尿病者死亡率更高。门诊应定期监测 UACR、eGFR、血钾等指标，早期干预。</p>
+      </div>
+    </article>
+
+    <!-- 3 糖尿病足部溃疡 -->
+    <article class="dz" id="dz-dfu" data-page-node-id="ijBm8I2oCfy4ubPbykHUIr">
+      <div class="dz-head" data-page-node-id="oBh1uMcUgOpE4oS3xOcEcm"><span class="dz-num" data-page-node-id="j47INFECZZnVvziH1bDcPz">03</span><h2 data-page-node-id="EOCYT1UjlT1mdhwvOWrx3R">糖尿病足部溃疡（DFU）</h2></div>
+      <div class="dz-src" data-page-node-id="Qr5O9RGl2owQXz2vPBWVbN">研制单位：<b data-page-node-id="TL5ZCIF5hsQ51Po2fnOiSg">中华中医药学会 皮肤科分会</b> · 第二批</div>
+      <span class="dz-meta" data-page-node-id="TLAnpRbUDq2BXP1VpCcMO8">第二批 · 皮肤科分会</span>
+      <div class="block" data-page-node-id="SbdmfXNfiRvQmxZ1i7H9hJ">
+        <h3 data-page-node-id="6bIWltsOEhJ7ntIT89SdGb">概述</h3>
+        <p data-page-node-id="VdvKzZaVtUNhOStWVr0CEh">DFU 是糖尿病严重的慢性并发症之一，指目前或曾经诊断为糖尿病的患者出现的足部溃疡。发病机制复杂，涉及<span class="em" data-page-node-id="oXR7QE6rOCa8vLuAfRM38J">神经病变、血管病变、感染和足部结构异常</span>等多种因素。</p>
+      </div>
+      <div class="block" data-page-node-id="bjj1FnUaZDoYfd84qd98vT">
+        <h3 data-page-node-id="WqmQFk82stRqtDJ24GfVSp">临床表现</h3>
+        <ul data-page-node-id="WMjooodK918uzhad3P0D1A">
+          <li data-page-node-id="yrnG5NWezdFlK4W4pNE48T">主要表现：足部皮肤溃疡、感染、坏疽，甚至需要截肢；</li>
+          <li data-page-node-id="txAbwfeAthuVu9g78qyHBU">发病率在糖尿病患者中约<span class="data-tag" data-page-node-id="20YR1FyLV9Ra2MULUtLdIa">15%–25%</span>，随病程延长和血糖控制不佳显著增加。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="VGEVs7JJmPHQwjhRV1uwgJ">
+        <h3 data-page-node-id="FAiY2NczaVrgXTy1CE2mT7">诊断要点</h3>
+        <p data-page-node-id="Xlv0M4jxXcgFRdIOLrfgp0">清单未载明具体分级标准；提示需综合评估<span class="em" data-page-node-id="HGOxFuFfp1AWmZvab5oJzO">神经、血管、感染与足部结构</span>等因素（据其发病机制）。</p>
+      </div>
+      <div class="block" data-page-node-id="4m0qoFE3FlCYMbELtlletW">
+        <h3 data-page-node-id="BPsxRmREeK7mrKtSr2fEjw">治疗／管理方案</h3>
+        <ul data-page-node-id="srCoX0yMk0Z4XX3J37Z9tJ">
+          <li data-page-node-id="59XMzfAVfjRGbysexPiuEw">治疗目标：促进溃疡愈合、预防感染、减少截肢风险、提高生活质量。</li>
+          <li data-page-node-id="A0B5639HdzLSoMbKOeWKJU">常规方法：血糖控制、创面清创、局部换药、抗生素治疗、血管重建手术。</li>
+          <li data-page-node-id="GK5S7Ke1YFhfc2zdT0Ltjp">新疗法：生长因子、负压治疗、干细胞治疗等（费用较高、疗效尚需验证）。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="mbKoB8C0Y0vpNyPiaCr2Zz">
+        <h3 data-page-node-id="KFgSHXWnr62njE9QCbDhcA">随访建议</h3>
+        <p data-page-node-id="ysUXOpYgh0nnOPHCwF6hn6">据清单：中国糖尿病患者 1 年内新发溃疡发生率<span class="data-tag" data-page-node-id="GgCEx1DyGEI0ko0AjmuEaM">8.1%</span>，已愈溃疡 1 年内复发率<span class="data-tag" data-page-node-id="KRSml7IdMaEsZSB1VILa2G">31.6%</span>，患者年死亡率<span class="data-tag" data-page-node-id="FjKHCQOFAAbHbveWqpxQ1S">11%</span>，截肢患者高达<span class="data-tag" data-page-node-id="ucYg4rFdVNgRJirfvR7ubG">22%</span>。高致残率、高致死率提示<span class="em" data-page-node-id="YllTr7USSvkHOWGXofL4Xy">高危足需定期筛查、减少溃疡复发</span>。</p>
+      </div>
+    </article>
+
+    <!-- 4 代谢相关脂肪性肝病 -->
+    <article class="dz" id="dz-mafld" data-page-node-id="zB6C462Sxuk5GvRGF4Wpz9">
+      <div class="dz-head" data-page-node-id="7e0pLH545KAQHWQoU2HBOK"><span class="dz-num" data-page-node-id="veRFWfSoiO8VmB6um91vG5">04</span><h2 data-page-node-id="PEHPJRWxn7yhWT85UCFtgE">代谢相关脂肪性肝病（MAFLD）</h2></div>
+      <div class="dz-src" data-page-node-id="JqCWOqsSYlgEZQicI3Qpq2">研制单位：<b data-page-node-id="gHpOtwtOdK8BD1oTN3WcQT">中华中医药学会 肝胆病分会</b> · 第二批</div>
+      <span class="dz-meta" data-page-node-id="OGuq0CPHC71rz0ixHi7HNI">第二批 · 肝胆病分会</span>
+      <div class="block" data-page-node-id="ySdU3tm7yYOPXgmXOdbX2v">
+        <h3 data-page-node-id="vuGjyggnYbzKsWa0CpC94n">概述</h3>
+        <p data-page-node-id="EIqMt2AjftW2f7tgQS91IR">MAFLD 是一种与代谢功能障碍相关的慢性进展性肝病，特征是肝脏脂肪的异常积累，为全球最常见的慢性肝病之一。疾病谱包括：<span class="em" data-page-node-id="O4sZTpGZlbmEM2aTEyrwzn">代谢相关脂肪肝 → 脂肪性肝炎 → 脂肪性肝纤维化 → 脂肪性肝硬化</span>。发病率逐年上升，普通人群约<span class="data-tag" data-page-node-id="yrnQ2TiCRhOGDFrytOgJvU">20%–30%</span>，肥胖人群可达<span class="data-tag" data-page-node-id="qI4DyaFXihAi3RxTflCZ8V">70%–90%</span>。</p>
+      </div>
+      <div class="block" data-page-node-id="BPDdr7f9kbEpIZyqcEfglo">
+        <h3 data-page-node-id="sLcTsLS1MBdMQTOCNFuVmF">临床表现</h3>
+        <p data-page-node-id="H7LUzwznamQ4zikx9gzfsx">清单未详列症状；强调 MAFLD<span class="em" data-page-node-id="v0b7qD02TPrbgwQCzVhMuB">病程较长</span>，部分患者可进展为肝纤维化、肝硬化甚至肝癌。</p>
+      </div>
+      <div class="block" data-page-node-id="3blWEYOLxFb52jqF9iKJ8F">
+        <h3 data-page-node-id="jBmeyCXB0lfcwC3PvkbKIk">诊断要点</h3>
+        <p data-page-node-id="4d5XtnUEETiy8CIBODWQNq">清单未载明具体诊断标准；提示发病机制涉及<span class="em" data-page-node-id="WItyx1JQpZAierhuU6PEds">脂肪堆积、炎症反应、氧化应激和遗传因素</span>等。</p>
+      </div>
+      <div class="block" data-page-node-id="A3WHq9pzOKQHFRSHzYXoIM">
+        <h3 data-page-node-id="Dsw3HHRmFEMxCnDVZmEpor">治疗／管理方案</h3>
+        <ul data-page-node-id="y8Zi9Z47lJOEcjOaHa8eh9">
+          <li data-page-node-id="v7ppc0F3EvIQK7eJOv8KF2">治疗目标：减轻肝脏脂肪堆积、改善肝功能、预防肝纤维化和肝硬化。</li>
+          <li data-page-node-id="Ji937wmtVnEDFQgr3mXP9H">策略：生活方式干预（饮食控制、增加运动）、药物治疗（他汀类、胰岛素增敏剂）、手术治疗（减重手术）。</li>
+          <li data-page-node-id="1FTyKIckM7EE7tUacuHPCP">局限：生活方式干预依从性差；药物效果有限且可能副作用；目前<span class="em" data-page-node-id="Ykn9PzVHAyIFIP2WurS7S2">尚无特效药获批</span>。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="9NDu6FyuAABDH8KwhlNVI7">
+        <h3 data-page-node-id="syw1MThmANZOyELiK2wP91">随访建议</h3>
+        <p data-page-node-id="DrSZa6if3OqEaAUEZD3vBA">清单临床需求明确「改善肝功能、预防肝纤维化」「减少肝硬化发生」，结合其「部分患者可进展为肝纤维化、肝硬化甚至肝癌」的提示，门诊应定期评估<span class="em" data-page-node-id="kZVez2W8eoT2M3sLOzZcSV">肝功能与肝纤维化指标</span>。</p>
+      </div>
+    </article>
+
+    <!-- 5 痛风 -->
+    <article class="dz" id="dz-gout" data-page-node-id="iXCJyx88h9DaP62bJQMCnG">
+      <div class="dz-head" data-page-node-id="WAzndLyeVSwv7HQfjzCyDI"><span class="dz-num" data-page-node-id="pJrLxsUPXTHoxgQBELPTjO">05</span><h2 data-page-node-id="EeyMHLOELCDEeUGnSfeazK">痛风</h2></div>
+      <div class="dz-src" data-page-node-id="8y3RvcmwGA2T7ZDxW8oVJp">研制单位：<b data-page-node-id="m9xbZbbUsoSO39EBRr75jr">中华中医药学会 风湿病分会</b> · 第三批</div>
+      <span class="dz-meta" data-page-node-id="FGXLEVhutDtss4JaUOFHeB">第三批 · 风湿病分会</span>
+      <div class="block" data-page-node-id="1fmzbjD7RHGxJaXmUDVqS9">
+        <h3 data-page-node-id="wleiYBuhuvWhL34ttic0Jb">概述</h3>
+        <p data-page-node-id="Lj8GGfVvPJRKb8klRQ30hw">痛风是嘌呤代谢紊乱和/或尿酸排泄减少导致血尿酸持续升高（高尿酸血症），尿酸盐晶体沉积于关节、软组织、肾脏等部位，引发的急慢性炎症和组织损伤的代谢性疾病。我国成人高尿酸血症患病率约<span class="data-tag" data-page-node-id="dqpjcDW5j3F7cy8BXcSyEE">13.3%</span>，痛风约<span class="data-tag" data-page-node-id="kAw99BE9Es3It6mEqSLd2a">1.1%–3.6%</span>，男性显著高于女性，呈年轻化趋势，已成为我国仅次于糖尿病的第二大代谢性疾病。</p>
+      </div>
+      <div class="block" data-page-node-id="LTxCsyLZkqDOIqVBkx7TM5">
+        <h3 data-page-node-id="OQ1lTVulG5bq3gfbaij0ro">临床表现</h3>
+        <ul data-page-node-id="bnqzYjbk9vOUuVfji7ltOm">
+          <li data-page-node-id="UjKFtWE0AU6Rx9pDUz5H6G">急性发作：关节剧痛、红肿、发热，多夜间或清晨突然起病，最常见于<span class="em" data-page-node-id="0OJhnmzqe4irGBVhy0BJBN">第一跖趾关节</span>；</li>
+          <li data-page-node-id="DF41NEY0Gv1M5BGD9tNYjT">反复发作可进展为慢性痛风性关节炎，出现关节侵蚀、畸形、功能障碍，并可形成痛风石；</li>
+          <li data-page-node-id="SLw9o02ASHD7f1DHDISH3g">长期高尿酸可致尿酸性肾病（急性/慢性尿酸性肾病、尿酸性肾结石），并显著增加心血管疾病及代谢综合征风险。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="kFeMp9QH9MHA0hIenviAVZ">
+        <h3 data-page-node-id="mBEf6TG5ZxDUKbQYSiD9t9">诊断要点</h3>
+        <p data-page-node-id="1ijkAkt1hlYTGnDYn7EmUB">清单强调「降尿酸是痛风治疗的核心」，并明确血尿酸控制目标：<span class="data-tag" data-page-node-id="9O7uFrAdjCpdjMdHvvwEim">通常 &lt;360μmol/L</span>，<span class="data-tag" data-page-node-id="qEgYFALhOOp63f80B8vMtY">有痛风石者 &lt;300μmol/L</span>——用于预防急性发作、促进痛风石溶解、保护靶器官。</p>
+      </div>
+      <div class="block" data-page-node-id="Y13YBbhu28vAwCLYxIuBlJ">
+        <h3 data-page-node-id="j8BuOkByBKNGgUHkiluwz0">治疗／管理方案</h3>
+        <ul data-page-node-id="TVN4IdKv2IcVsNIyOy948W">
+          <li data-page-node-id="kUAmUaeuCPBH7cs88rrNLs"><span class="em" data-page-node-id="qc68oDE1LDg9uUD9Dnb4zu">急性期</span>（缓解炎症与疼痛）：非甾体抗炎药（NSAIDs）、秋水仙碱、糖皮质激素（口服/关节内/肌注）。</li>
+          <li data-page-node-id="N04zwfzznVtVOAcItRdH8u"><span class="em" data-page-node-id="9sd21OmB5JMUw90b2fQQDq">长期降尿酸</span>：抑制生成——别嘌醇、非布司他；促进排泄——苯溴马隆；尿酸酶（普瑞凯希）用于难治性痛风。</li>
+          <li data-page-node-id="ze72Ag6DVPx6CHtlCWv2ir"><span class="em" data-page-node-id="QOa2aTsRCKL2yJHY0W15Nv">用药注意</span>：别嘌醇需警惕超敏反应（与 HLA-B*5801 相关，东亚阳性率高）；非布司他存在心血管事件争议；苯溴马隆重度肾功能不全禁用、有肝损伤报道；初始降尿酸需合用小剂量秋水仙碱或 NSAIDs 数月。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="iT5aDI6BrqmI0jzf1cM0lY">
+        <h3 data-page-node-id="cFIkZJoIw5RRvUhZxTeAFy">随访建议</h3>
+        <p data-page-node-id="4nqGBtvdZdZVj9MbwFNjdk">据清单：痛风第 1 年复发率<span class="data-tag" data-page-node-id="F6l73MLT87cXPJrQ3QUcyO">30%–37%</span>，5 年累计复发率约<span class="data-tag" data-page-node-id="1IMjqlfucizriUOYmG7fln">60%–62%</span>；长期降尿酸依从性差是治疗失败和复发主因。门诊应规律监测血尿酸、提高依从性，并关注其普遍并存的肥胖、胰岛素抵抗、血脂异常等代谢紊乱。</p>
+      </div>
+    </article>
+
+    <!-- 6 高血压 -->
+    <article class="dz" id="dz-htn" data-page-node-id="QKZIal6w2YgbVfBFasNyS6">
+      <div class="dz-head" data-page-node-id="JgAovTm3ze9zjBeAMlw0qK"><span class="dz-num" data-page-node-id="Hcdgh9YMpvc3OWm0HUtO9H">06</span><h2 data-page-node-id="PcKTT0Y3mCIDdz6Rc2jbni">高血压</h2></div>
+      <div class="dz-src" data-page-node-id="IoWwi7A2BALwMrKCKNIpdY"><b data-page-node-id="uAz8gAYeCllkkNwW6z6BGB">清单未收录本章</b></div>
+      <span class="dz-meta unlisted" data-page-node-id="jdWVXG3sTz0ThlOfTrk80Z">未收录 · 仅作危险因素提及</span>
+      <div class="block" data-page-node-id="a3tmuCv19qCeDfTMZ4JFk6">
+        <h3 data-page-node-id="UU2yCDTR1YNqXoK1ihtYfu">概述</h3>
+        <p data-page-node-id="m6fXsusJcdJFbF7OnxiFyG">《中药新药研发用临床需求清单》<span class="em" data-page-node-id="jqo98qMTVwVfJjYeJeRNWh">未将高血压单列为病种</span>。仅在「糖尿病肾脏疾病」章节中，作为应控制的危险因素被提及一次：「现代医学治疗 DKD 主要包括生活方式干预、控制危险因素（高血糖、<span class="em" data-page-node-id="5zPRExl8NG5aTSmbMR1LAm">高血压</span>、脂代谢紊乱等）……」。清单亦在痛风、代谢相关脂肪性肝病等章节中以「代谢综合征」整体概念关联心血管代谢风险。</p>
+      </div>
+      <div class="block" data-page-node-id="qD3cyAAtgQQMmtUhKKEERk">
+        <h3 data-page-node-id="IbZXQv4G5aoBusOO6J6sX9">临床表现／诊断／治疗／随访</h3>
+        <div class="caveat" data-page-node-id="AkRPTaPpg4mpw1HCvXJqI7">清单<b data-page-node-id="oE1W3w0gmOTRMLpBMrlBHu">未载明</b>高血压的临床表现、诊断、治疗与随访内容。为恪守「不引清单外数据」的原则，本节不作补充性罗列；相关诊疗请参考国家现行《中国高血压防治指南》及专科规范。</div>
+      </div>
+    </article>
+
+    <!-- 7 胃食管反流病 -->
+    <article class="dz" id="dz-gerd" data-page-node-id="0zAHHEAi15GvbqqvXOGkUT">
+      <div class="dz-head" data-page-node-id="26OG0ZuIpTfHJDMFO0xLKl"><span class="dz-num" data-page-node-id="a1D3fMWVyxnl1a0OE6MbJ0">07</span><h2 data-page-node-id="LUhWf7vdoQKPpibWCzEZZP">胃食管反流病（GERD）</h2></div>
+      <div class="dz-src" data-page-node-id="sgzcFM7ZCgtvZihGhe7y5w">研制单位：<b data-page-node-id="MU16PZio74Y73q7Mcp3tuq">中华中医药学会 脾胃病分会</b> · 第一批</div>
+      <span class="dz-meta" data-page-node-id="yzNt6dfqAZzC6yl8x2hH3E">第一批 · 脾胃病分会</span>
+      <div class="block" data-page-node-id="IzqPL6gn7AF0LJ9XkwLqOQ">
+        <h3 data-page-node-id="Z84ZlUuEpalkCouwvRxADT">概述</h3>
+        <p data-page-node-id="KV6Tf29MsHLV80S86U2zFI">GERD 是胃内容物反流至食管引起的不适症状或相关并发症，属常见消化系统慢性疾病。发病机制：食管防御机制平衡破坏 + 反流物对食管黏膜损伤，含食管下括约肌松弛、胃内容物暴露、食管廓清障碍、胃排空下降等；风险因素：烟酒、偏嗜甜食、情绪不佳、体重指数升高。分型：<span class="em" data-page-node-id="aKH4BTrlwe5ossS6XdF3LZ">非糜烂反流病（NERD）</span>、<span class="em" data-page-node-id="EgPXF9Xtczgujt5Zh1Od8L">反流性食管炎（RE）</span>。约 <span class="data-tag" data-page-node-id="tQgLCKjADDKCtJXVyaChta">10%</span> 患者可发展为 Barrett 食管，伴显著肠上皮化生者被认为是食管腺癌癌前病变，癌变率约<span class="data-tag" data-page-node-id="sgFrQKjEzjKnPaZCGBPoC3">0.61%</span>。</p>
+      </div>
+      <div class="block" data-page-node-id="orWZGJHzsNa7uJPUb5S5qF">
+        <h3 data-page-node-id="wrCfJnRd5A3Vui5SLe6WDw">临床表现</h3>
+        <ul data-page-node-id="ObEg2JTGTv0pxKTBmFVRsA">
+          <li data-page-node-id="IBvrnG2z4KuM1WeXx7jOHr">典型症状：<span class="em" data-page-node-id="0ccY7yiUtjNMDHW97vXQQ7">反流、烧心</span>；常伴胸痛、上腹烧灼感、上腹痛、上腹胀、嗳气等不典型症状；</li>
+          <li data-page-node-id="JYBlwHs7u1M2H0lAB2HxT9">可与功能性消化不良（FD）、肠易激综合征（IBS）症状重叠；</li>
+          <li data-page-node-id="t2HBLtptAQJiPl6GvcFKA7">严重者可出现食管外症状（咽炎、咳嗽、哮喘、牙蚀症）即<span class="em" data-page-node-id="5RLtWjEzr5x6L1vEITiCcp">食管外综合征</span>。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="rG2RFpPBovBdVhXvmuEqc4">
+        <h3 data-page-node-id="EiCBxGXbN7leWFZbWg1Q4A">诊断要点</h3>
+        <p data-page-node-id="xi4HILd9oi72dSWXsZFlbQ">据清单：根据反流是否导致食管黏膜糜烂、溃疡，分为 NERD 与 RE。我国每周至少发作 1 次烧心症状的患病率为<span class="data-tag" data-page-node-id="GSgFHWDFuHwLgXAk5CVKRr">1.9%–7.0%</span>；在具 GERD 相关症状人群中，NERD 患病率为<span class="data-tag" data-page-node-id="u3fzmr2AGCom6fColOfY09">50%–70%</span>。</p>
+      </div>
+      <div class="block" data-page-node-id="oV0N3l7EGkGISPghsICcwf">
+        <h3 data-page-node-id="LLgQPdKiNEzr615koOHyzG">治疗／管理方案</h3>
+        <ul data-page-node-id="VkXRw3oeWAIGaBiM2tdDDU">
+          <li data-page-node-id="FvoWAtWCO2LYhgFMJeMNyC">内镜治疗或抗反流手术（存在术后并发症风险）；</li>
+          <li data-page-node-id="6iPRDIRWSVRr2aFiylyVvT">质子泵抑制剂（PPI）及新型抑酸药 P-CAB：缓解酸相关症状、促糜烂性食管炎愈合，但对<span class="em" data-page-node-id="QIpEiyJ9oBPFgn2cNsM1G5">内镜阴性 GERD 疗效不理想</span>；</li>
+          <li data-page-node-id="92jMoy6IDwvaw4jo0gifGB">长期抑酸需警惕：消化不良、胃内 pH 升高致细菌过度增长、难辨梭菌感染、骨质疏松；P-CAB 可出现高胃泌素血症。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="t1IpA7olHbl8vUtF7QmOHc">
+        <h3 data-page-node-id="OzJCiKbb5vq8lCynHMvnwJ">随访建议</h3>
+        <p data-page-node-id="1JKbHkanJfdgsiCRMVxE7d">清单提示 GERD 症状反复发作、通常需长期维持治疗，尤其难治性 GERD 的重叠症状与食管外症状；Barrett 食管为癌前病变，需内镜随访监测。</p>
+      </div>
+    </article>
+
+    <!-- 8 溃疡性结肠炎 -->
+    <article class="dz" id="dz-uc" data-page-node-id="pdWgpHRsJwEv8dtx9TGp8t">
+      <div class="dz-head" data-page-node-id="f41vELvoaNBXKLzVrhWfhc"><span class="dz-num" data-page-node-id="g8sG7rLYIsAD8S54Xo2lvO">08</span><h2 data-page-node-id="BAsVfk1YWb30PSwiXqXbDH">溃疡性结肠炎（UC）</h2></div>
+      <div class="dz-src" data-page-node-id="jnsugIqM1yUi8DCyuhLJoK">研制单位：<b data-page-node-id="l9lRxVkwGf3AjaeLYNGUBu">中华中医药学会 脾胃病分会</b> · 第三批</div>
+      <span class="dz-meta" data-page-node-id="AoO1xYw2H3DqYpvBC3zVjY">第三批 · 脾胃病分会</span>
+      <div class="block" data-page-node-id="2Izpm6GvJBzme6bzEwWeHF">
+        <h3 data-page-node-id="mY47bbZNv4f4bqH5U9adcq">概述</h3>
+        <p data-page-node-id="buRbRixY7UryqAjgFY1uRg">UC 是病因未明的慢性非特异性肠道炎症性疾病，属炎症性肠病范畴，病变主要累及结肠黏膜及黏膜下层，呈连续弥漫性分布，多自直肠向近端结肠发展，病程迁延反复。我国大陆年发病率为<span class="data-tag" data-page-node-id="MVBsMjBXPUx8RCCbHTkPzu">1.96–3.14/10 万</span>，为亚洲患病水平最高国家。</p>
+      </div>
+      <div class="block" data-page-node-id="yzVXf8fJqQPhJiL2ZCHFk2">
+        <h3 data-page-node-id="EKHmDYB5XGOLOLgvpjb7iM">临床表现</h3>
+        <ul data-page-node-id="nYSpEhMXQGAR9oBVbKn3cU">
+          <li data-page-node-id="c8HZLCTBv8Dx0yxhe6xHm2">核心症状：<span class="em" data-page-node-id="fHMexTUI6qlVOR2HACG2da">腹泻、腹痛、黏液脓血便、里急后重</span>；</li>
+          <li data-page-node-id="l22yjTWGQlWge8AMHDH07E">年龄呈「双峰型」：15–30 岁、50–70 岁；</li>
+          <li data-page-node-id="epaGY4i31Hb2cruw6m93Lm">分型：按病程分初发型、慢性复发型（占比超 70%）；按范围分直肠型、左半结肠型、全结肠型；按活动度分轻、中、重度（中重度可有发热、贫血等全身表现，伴关节、皮肤、眼部等肠外症状）。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="TvpMLmdYgcCDUI1n4MHI5R">
+        <h3 data-page-node-id="qmfwOAG9C5pnfDyEZ8XATI">诊断要点</h3>
+        <p data-page-node-id="cysjBMWt0r2XVzET85iWvZ">病理特征以结肠黏膜充血、水肿、糜烂、溃疡形成为核心；活动期可见隐窝炎、隐窝脓肿，慢性期出现隐窝结构变形。</p>
+      </div>
+      <div class="block" data-page-node-id="cYaqLsr56WKIIUDnzJMivA">
+        <h3 data-page-node-id="uyuJXrkl7lCrJ9oeWMHkOs">治疗／管理方案</h3>
+        <ul data-page-node-id="m1XhBuf3Mxzsb6Aq0OSKr5">
+          <li data-page-node-id="w3526rOvtBAxd15bH9sjh9">目标：活动期诱导临床缓解、血清或粪便炎性标志物正常化、力争<span class="em" data-page-node-id="wUekHsmFyiod1TrBwgoot4">内镜下黏膜愈合</span>；缓解期维持无激素缓解。</li>
+          <li data-page-node-id="x3KaRuxHIspncq9UCHxP5p">药物阶梯：5-ASA（一线基础）→ 糖皮质激素（升级用药、不作维持）→ 免疫抑制剂（激素依赖/疗效不佳）→ 生物制剂（英夫利昔单抗 IFX、维德利珠单抗 VDZ，中重度一线）。</li>
+          <li data-page-node-id="DrEc7VzbiJyfTd059gN6K6">局限：诱导期缓解率未超 20%–30%（临床）/ 30%–60%（现实）；生物制剂存在失应答、费用高昂。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="OXdW0NHlVc4eBqiqBINwh9">
+        <h3 data-page-node-id="i1gBj2TXHCijmPuzEYeMZ9">随访建议</h3>
+        <p data-page-node-id="TtQTZ0CcEWfhYPnnUaoxQ3">据清单：中毒性巨结肠发生率<span class="data-tag" data-page-node-id="GwCkqfrscqzNV1EoRNARDs">1%–5%</span>、下消化道大出血<span class="data-tag" data-page-node-id="MZge56OHpGVrj3z21IX5yV">1%–6%</span>、良性狭窄<span class="data-tag" data-page-node-id="QYAjmWSpFnGlCAOdQsBEeF">5%–10%</span>、结直肠癌变（病程 20 年累积风险约<span class="data-tag" data-page-node-id="TmaCdBCVxymy7bGTLLmL4b">8%</span>）、约<span class="data-tag" data-page-node-id="y8LunE9CdTifpV3ndtP20V">20%–30%</span>患者需手术干预。提示需长期规范治疗与内镜随访。</p>
+      </div>
+    </article>
+
+    <!-- 9 萎缩性胃炎及其癌前病变 -->
+    <article class="dz" id="dz-cag" data-page-node-id="dpUgUIOZnUbABw4uBh5Fc4">
+      <div class="dz-head" data-page-node-id="8CW1XiyvUoWwznxjCnhzYv"><span class="dz-num" data-page-node-id="xmmX6CZp8gMeXOKL97vWN1">09</span><h2 data-page-node-id="ogsI2CdR6HBbbc1iZpRFCH">萎缩性胃炎及其癌前病变</h2></div>
+      <div class="dz-src" data-page-node-id="ZFooDwDhVFVVaDZdCE94Ee">研制单位：<b data-page-node-id="iuSLOoaLLfVROs8CQoSrW9">中华中医药学会 脾胃病分会</b> · 第二批</div>
+      <span class="dz-meta" data-page-node-id="fKqtEp0o8DjNsmNBaZB3Oh">第二批 · 脾胃病分会</span>
+      <div class="block" data-page-node-id="wAdkkWYUNRc6Ii3GL1FVM9">
+        <h3 data-page-node-id="yxisWZc6eSnUY1wjjU9sdh">概述</h3>
+        <p data-page-node-id="Jf55Uiw2LwIc9aVdxuEoSb">萎缩性胃炎及其癌前病变（异型增生）是胃癌发生的关键前驱病变，病程遵循「<span class="em" data-page-node-id="EnWimvsR3jxWuZFOjqX8Sj">Correa 模式</span>」：正常胃黏膜 → 慢性炎症 → 胃黏膜萎缩 → 肠化生 → 异型增生 → 胃癌。胃黏膜萎缩与肠化生共同构成癌前状态；异型增生（上皮内瘤变）被归类为癌前病变。</p>
+      </div>
+      <div class="block" data-page-node-id="wNASmVuG03gQACGLkiMCpj">
+        <h3 data-page-node-id="mBZIoDuuBas0w9mNYxSldw">临床表现</h3>
+        <ul data-page-node-id="PGpcY1VOmHHyanbA8h3mC0">
+          <li data-page-node-id="XvF4harhpSacWzDr7h1Yh0">以<span class="em" data-page-node-id="axaWpPbcIk5L0viPNjs1EY">上腹痛、腹胀、饱胀感、早饱、嗳气、反酸</span>等消化不良症状为主，持续或反复发作；</li>
+          <li data-page-node-id="6ZNNUOO6LiZYoQXQCr47mL">有症状者中：上腹痛 52.9%、腹胀 48.7%、餐后饱胀 14.3%、早饱 12.7%；约 13.1% 患者无明显症状；</li>
+          <li data-page-node-id="gmWFSBo72kmmtCVTgkGPjN">部分患者因担忧癌变而出现焦虑、抑郁及睡眠障碍。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="Z72ls4Yp8Y8YPxv1AR9KRG">
+        <h3 data-page-node-id="PtHwMkw7EmBG8BwlFDdFlH">诊断要点</h3>
+        <ul data-page-node-id="msLZCz7JdkNk9RgvRb3gAW">
+          <li data-page-node-id="jb5Kx7I6S2HwnukfBCBMFq">基于胃炎评价系统（OLGA）与肠化生评价系统（OLGIM）分期；</li>
+          <li data-page-node-id="qrW28JeFBqdW86jEoLh4Ft">异型增生分低级别、高级别（部分高级别接近早期胃癌，归入早期胃癌范畴）及不确定性异型增生；</li>
+          <li data-page-node-id="7WnSPdGD3U3zjy5WxWFeNh">风险：胃黏膜萎缩患者胃癌年发生率 0.1%，伴肠化生者 0.25%，低级别异型增生 0.6%；广泛萎缩+肠化生 5 年累积胃癌发病率 1.9%–10%/5.3%–9.8%；</li>
+          <li data-page-node-id="7DZMIgFKfIymRih5w9h2Oy">幽门螺杆菌耐药：克拉霉素 37.0%、甲硝唑 87.9%、左氧氟沙星 34.2%（双重 43.6%、三重 26.5%）。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="ChI9Hfxb9rulhnVG6q0Ui5">
+        <h3 data-page-node-id="WO9dHQGpME3rUt8g9VRYTN">治疗／管理方案</h3>
+        <ul data-page-node-id="Bw8PqK67cM15RllOyPAyCF">
+          <li data-page-node-id="V8PfTX6PcZ6u34pOLBMnEa"><span class="em" data-page-node-id="tjakcrZaOK6n1CFyTesUGi">内镜治疗</span>：高级别异型增生及部分低级别（伴可见病变），行内镜黏膜下剥离术（ESD）等，但仅适用于局限性病变；</li>
+          <li data-page-node-id="odU3V0vNUz2FHc1oXGnOfM"><span class="em" data-page-node-id="vmmS0UnoIFXq2awQgOYsQ5">病因干预</span>：根除幽门螺杆菌（减缓炎症、降低胃癌风险，但对已萎缩/肠化生疗效有限）；补充叶酸、维生素 C、硒（证据不足）；</li>
+          <li data-page-node-id="iO5VAxH8Bsm3XgvhA9QHMh"><span class="em" data-page-node-id="RZOVNhXO7nhlUL2RXOqUZH">对症治疗</span>：胃黏膜保护剂、抗酸药物、促动力药物、神经递质调节药物。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="t3XDekkKubMjYQVioDRage">
+        <h3 data-page-node-id="EeqDdadavAZ5S7jaEuvxcd">随访建议</h3>
+        <p data-page-node-id="jwL6dXcH9anCGRIgbhEfiE">据清单风险分层：高风险（重度萎缩、胃窦胃体肠化生并存、OLGA/OLGIM II/IV 期）需加强管理；结合异型增生年发生率与 5 年累积癌变率数据，提示<span class="em" data-page-node-id="K18T3lYwAmHfiTtg0LH3Vb">高风险者需定期内镜随访</span>。</p>
+      </div>
+    </article>
+
+    <!-- 10 恶性肿瘤 -->
+    <article class="dz" id="dz-cancer" data-page-node-id="bXbWPb8vJk4r7P5kVcVPcu">
+      <div class="dz-head" data-page-node-id="jJjM5Ak00tg58yo6MzSbpF"><span class="dz-num" data-page-node-id="uw9WMZ8EWL1etyWxFsBHyz">10</span><h2 data-page-node-id="0aaJ8iHMcJeBs93cWFby61">恶性肿瘤</h2></div>
+      <div class="dz-src" data-page-node-id="VjqLi2WhP4RBBkHNyVOS87">研制单位：<b data-page-node-id="P3AnKPVoWctNUegMIHl3bZ">中华中医药学会 肿瘤分会</b> · 第一批</div>
+      <span class="dz-meta" data-page-node-id="tih9s5zAy8ZTMGKdErZcFm">第一批 · 肿瘤分会</span>
+      <div class="block" data-page-node-id="oxecyUzsDPPhjKETbQBlEq">
+        <h3 data-page-node-id="mhp0eCrEaaX9yRmZskwkGL">概述</h3>
+        <p data-page-node-id="wqnOSAr8EmKChoRee27EZe">恶性肿瘤是严重威胁人类生命的常见病、多发病。据 WHO 统计：2020 年全球新发恶性肿瘤约<span class="data-tag" data-page-node-id="LWyGXBGKq9AZ70fcJoLRTt">2000 万</span>、死亡约<span class="data-tag" data-page-node-id="FCDFr4ZH0NQClZJCCDM9pa">1000 万</span>，其中中国发病例数占比<span class="data-tag" data-page-node-id="BEjmazDi8DpfuGcLZQEyzZ">23.7%</span>、死亡占比<span class="data-tag" data-page-node-id="R7bqM8dJfWlkEbgpBu9DVM">30.7%</span>。据 2023 年国家癌症中心数据：肺癌位居发病首位，前 5 位（肺癌、结直肠癌、胃癌、肝癌、乳腺癌）约占全部发病的<span class="data-tag" data-page-node-id="SOwCtbCBERLvi8XseXtxnm">57.27%</span>。</p>
+      </div>
+      <div class="block" data-page-node-id="C2TB99q7Icxk9Dsq49HAOR">
+        <h3 data-page-node-id="i8bmAzL81CkY3jep6BkZQs">临床表现</h3>
+        <ul data-page-node-id="bZdNayHmkxnIhP1ShbXJPb">
+          <li data-page-node-id="W0a2D9JDguwsuyG5mcgd7Q">可为单一症状或多个症状；可因肿瘤本身，或由放疗、化疗等治疗导致；</li>
+          <li data-page-node-id="B43C7ps1vCOR4zHcOVEdhI">常见症状：疼痛、发热、疲乏，及合并症如胸腔积液、腹腔积液等。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="vx0cG8yXQCz1IAcGFvrkx4">
+        <h3 data-page-node-id="Dyl4mmEHxlzEiX65hrDofd">诊断要点</h3>
+        <p data-page-node-id="9AYliZvsIbUjADN69WRehi">清单未载明具体诊断标准（恶性肿瘤需病理学确诊）；本页不引清单外数值，诊断请遵循肿瘤专科规范。</p>
+      </div>
+      <div class="block" data-page-node-id="hvGcLk8w50kPWwCADJ6Lq2">
+        <h3 data-page-node-id="jIexKxJ9Qr4orEeh7XH0Jc">治疗／管理方案</h3>
+        <ul data-page-node-id="Cg829rZ8ExGMDbLoLJA7lX">
+          <li data-page-node-id="qk0OQ1nSImAaN2OwEilBYZ">西医多综合应用：手术治疗、化疗、放疗、免疫治疗、介入治疗、微波治疗等；</li>
+          <li data-page-node-id="huqoTbnAdy9d0mQ64Rvqam">治疗理念已从追求客观缓解率，转向<span class="em" data-page-node-id="1Kpy3krjBBjNkAn2WpBkA2">延长总生存期、改善生活质量、减轻机能衰退或肿瘤相关症状</span>；</li>
+          <li data-page-node-id="i9MonnNB9AyGBZQ3VMGiSf">中药研发临床定位（清单）：延长总生存期／无病生存期与无进展生存期、改善突出症状、改善生存质量、预防或减轻治疗不良反应、提高客观缓解率。</li>
+        </ul>
+      </div>
+      <div class="block" data-page-node-id="KDBgV4XrCVSWp964l6jHDH">
+        <h3 data-page-node-id="Gn7kljjhJESeAY4Sw5wbnz">随访建议</h3>
+        <p data-page-node-id="NTkcSrZoEb9aaFuZYMjg31">清单提示肿瘤治疗复杂、易引发不良反应（放疗致放射性肺炎、口腔溃疡；化疗致血细胞下降、消化道症状、手足麻木、心脏毒性；靶向治疗致皮疹），需序贯、分阶段或联合应用并密切随访。</p>
+      </div>
+      <div class="block">
+        <h3>扶阳辨治 · 学术依据</h3>
+        <p>扶阳学术以「<span class="em">阳虚为本、阴实为标</span>」认识肿瘤发生发展，临床采唐农教授<span class="em">次第治疗</span>：桂枝法 → 四逆法 → 补中益气汤（培土填精）。本馆相关基础文献如下：</p>
+        <ul>
+          <li><b>肺癌</b>（龚胜男等 Meta 分析，7 篇 RCT / 445 例）：温阳复方联合化疗较单纯化疗近期疗效更优（OR=<span class="data-tag">2.19</span>，P=0.0003），中重度骨髓抑制更少（OR=<span class="data-tag">0.15</span>，P&lt;0.00001），胃肠反应更少（OR=<span class="data-tag">0.41</span>，P=0.002）；论文以「阳虚为本、阳化气阴成形」为旨归。</li>
+          <li><b>肝癌</b>（梁新梅）：阳虚为本、痰瘀浊邪为标，次第三步；文献载 70 岁男性两年肿瘤未增大。</li>
+          <li><b>大肠癌</b>（李婧）：阳虚为本、阴实为标，次第三步；文献载 59 岁直肠腺癌便隐血转阴。</li>
+          <li><b>乳腺癌</b>（刘禹舟）：扶阳温通、通调中焦、培土填精为终极目标；文献载 42 岁女性化疗后白细胞下降获助。</li>
+        </ul>
+        <p>上述 4 篇文献信息整理自原文，未作增删；具体诊疗请遵循肿瘤专科规范，并与现代医学治疗协同。</p>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="footer" data-page-node-id="GnC2kr1eEsWKdm3yG80Q8r">
+    <h2 data-page-node-id="avubsjEEu0DYhfPXM9aRf5">数据来源</h2>
+    <ol data-page-node-id="zeLxICEU41Nct3VQ9Fd7m9">
+      <li data-page-node-id="TbZUq2OZMsdvWr8KNxJlzS">中华中医药学会《中药新药研发用临床需求清单（第一批）》（2023-12-04 发布，10 病种）——恶性肿瘤、胃食管反流病等。</li>
+      <li data-page-node-id="G8NDz0Y9pQ4eQktppJzINh">中华中医药学会《中药新药研发用临床需求清单（第二批）》（2025-04-26 发布，8 病种）——萎缩性胃炎及其癌前病变、糖尿病足部溃疡、糖尿病肾脏疾病、代谢相关脂肪性肝病等。</li>
+      <li data-page-node-id="uwPJG23ASetVu7MKsEtUvq">中华中医药学会《中药新药研发用临床需求清单（第三批）》（2026-04-26 发布，8 病种）——痛风、溃疡性结肠炎等。</li>
+    </ol>
+    <div class="legal" data-page-node-id="sfApWAurQOsEyVQKEmnHCk">本站内容为科普与宣传用途，不构成诊断与治疗建议。本页所有疾病数据与诊疗信息均整理自上述官方清单原文，未作增删；「糖尿病」「高血压」两节因清单未单列／未收录，已如实标注。如有不适，请及时至正规医疗机构就诊，具体诊疗以执业医师与现行指南为准。</div>
+  </footer>
+</div>
+
+<button class="backtop" id="backtop" aria-label="返回顶部" data-page-node-id="PL3GtPiDCTCnqZ5v2KfDqz">↑</button>
+
+<script>
+(function(){
+  "use strict";
+  var root = document.documentElement;
+  var btn = document.getElementById("themeBtn");
+  try{ var saved = localStorage.getItem("fy:theme"); if(saved === "dark" || saved === "light") root.setAttribute("data-theme", saved); }catch(e){}
+  if(btn) btn.addEventListener("click", function(){
+    var cur = root.getAttribute("data-theme");
+    var next = cur === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try{ localStorage.setItem("fy:theme", next); }catch(e){}
+  });
+  var top = document.getElementById("backtop");
+  window.addEventListener("scroll", function(){
+    if(top) top.classList.toggle("show", window.scrollY > 600);
+  }, {passive:true});
+  if(top) top.addEventListener("click", function(){ window.scrollTo({top:0, behavior:"smooth"}); });
+})();
+</script>
+</body>
+</html>
