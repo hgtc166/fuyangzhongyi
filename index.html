@@ -3,7 +3,7 @@
 <head data-page-node-id="4hy1P6Bsy7GCFtGGPdx1Ui">
 <meta charset="UTF-8" data-page-node-id="Qd6o3o8Qm1Yd8JWU3crAR4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="qlVdWFO4bF6kycMvxguCxo">
-<meta name="description" content="扶阳中医馆——郑钦安扶阳医学研究中心。元阳为本，阳主阴从。睡眠/代谢/男科三大专病门诊，一人一方，共病同治。" data-page-node-id="JFuaDfuvdzELf81yEeCHX3">
+<meta name="description" content="扶阳中医馆——郑钦安扶阳医学研究中心。元阳为本，阳主阴从。睡眠/代谢/男科三大专病门诊，辨证论治，共病同治。" data-page-node-id="JFuaDfuvdzELf81yEeCHX3">
 <title>扶阳中医馆 · 郑钦安扶阳医学研究中心</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="UuIfT2THGv27KJnVGSuc3U">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="4DvIm46XQctRSWWKmTFxrO">
@@ -12,7 +12,7 @@
 <style>
 /* ============================================================
    扶阳中医馆官网 · 郑钦安扶阳医学研究中心
-   版本：v3.2.4（2026-08-31）· 顶部导航栏所有组件去边框统一（shared-nav.js：toggle/burger/search/results 均 border:0 + 透明背景）
+   版本：v3.3.1（2026-08-31）· 全站合规修复：统一免责声明（不提供在线诊断/不开具处方/不宣传疗效/医疗前置审批已取消）+ 移除「在线咨询」按钮 + 预约表单改为到馆面诊
    美学：暖阳极简 × 坎卦图腾 | WarmSun 暖橙 Hex 体系 | 少文字多图形
    历史：v2.5.0 起版本号记录于文件头与 CHANGELOG.md，可追溯
    ============================================================ */
@@ -350,7 +350,8 @@ h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.01em;line-h
 .footer{border-top:1px solid var(--line);padding-block:var(--sp-7)}
 .footer-inner{display:grid;grid-template-columns:auto 1fr auto;gap:var(--sp-6);align-items:center}
 .footer p{font-size:var(--fs-xs);color:var(--ink-3);line-height:1.7;max-width:72ch}
-.footer-legal{white-space:nowrap;max-width:none}
+.footer-legal{white-space:normal;max-width:72ch;font-size:var(--fs-xs);color:var(--ink-3);line-height:1.85}
+.footer-legal b{color:var(--cinnabar);font-weight:700}
 .footer-qr{display:flex;gap:var(--sp-5);align-items:flex-start}
 .qr-item{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
 .qr-item img{width:116px;height:116px;border-radius:var(--radius-sm);background:#fff;padding:6px;border:1px solid var(--line);display:block;transition:transform .25s var(--ease-out-quart),box-shadow .25s}
@@ -776,14 +777,14 @@ h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.01em;line-h
     <div class="footer-qr" aria-label="服务号与小程序二维码" data-page-node-id="jdwtGnRYBxJ1l3XQvE8wFS">
       <figure class="qr-item" data-page-node-id="CQGGRXrckqBbLToNLsZi3k">
         <img src="assets/qrcode-service.jpg" alt="扶阳中医馆小程序二维码" width="116" height="116" loading="lazy" data-page-node-id="wiAjFyq3gFBK7ZbFy2yok5">
-        <figcaption data-page-node-id="zpFVmQ7Xa6r17AgftWDDZk">小程序 · 线上问诊</figcaption>
+        <figcaption data-page-node-id="zpFVmQ7Xa6r17AgftWDDZk">小程序 · 预约到馆</figcaption>
       </figure>
       <figure class="qr-item" data-page-node-id="RAT3wgqHRlv6Gmm0eaoe9N">
         <img src="assets/qrcode-miniapp.jpg" alt="扶阳中医馆服务号二维码" width="116" height="116" loading="lazy" data-page-node-id="HNvQ3RrJ9o7ZKKOA8AxvYD">
         <figcaption data-page-node-id="OAXBawN6WyAo6GWW1QS00t">服务号 · 关注扶阳</figcaption>
       </figure>
     </div>
-    <p class="footer-legal" data-page-node-id="CaRqzclF1NpcK4JJ8ViPKq">本站内容为科普与宣传用途，不构成诊断与治疗建议。如有不适，请及时至正规医疗机构就诊。</p>
+    <p class="footer-legal" data-page-node-id="CaRqzclF1NpcK4JJ8ViPKq">本网站（fuyangzhongyi.cn）仅以中医科普、机构与专家展示为目的，属科普与宣传用途，<b>不构成诊断与治疗建议，不提供在线诊断、不开具处方</b>。具体诊疗与处方须由执业医师在持有《医疗机构执业许可证》的实体机构内当面四诊合参后确定。本站内容如涉及医疗服务或药品广告，将依法经广告审查取得批准文号，不宣传疗效、不作夸大或绝对化承诺。互联网医疗保健信息服务前置审批已依据《国务院关于第一批取消 62 项中央指定地方实施行政审批事项的决定》（国发〔2015〕57 号）取消，原《互联网医疗保健信息服务管理办法》（卫生部令第 66 号）已于 2016 年 1 月 19 日废止。如有不适，请及时至正规医疗机构就诊。</p>
   </div>
 </footer>
 
@@ -1131,7 +1132,7 @@ function renderSpecDetail(id){
     + '<section class="spd-sec"><h3 class="spd-h3">共病同治 · 协同诊疗</h3><div class="spd-co">'+coHtml+'</div></section>'
     + '<footer class="spd-cta">'
     +   '<button type="button" class="spd-btn spd-btn--primary" data-spd-book>预约「'+S.name+'」门诊</button>'
-    +   '<p class="spd-note">本页为学术科普，具体调理须由执业医师四诊合参、一人一方。</p>'
+    +   '<p class="spd-note">本页为学术科普，不提供在线诊断与开方；具体调理须由执业医师当面四诊合参后确定。</p>'
     + '</footer>';
   $("#spdTitle").textContent = S.name + "专病门诊";
   panel.scrollTop = 0;
