@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>学术渊源 · 回字形谱系设计存档（lineage-huitu-design）</title>
+<!--
+  ============================================================================
+  回字形（同心圆）传承谱系设计 · 存档快照
+  ----------------------------------------------------------------------------
+  来源：扶阳中医馆官网 index.html · 版本 v3.0.0（2026-08-27）
+  设计系统：WarmSun 暖阳设计系统（暖橙 × 坎卦图腾）
+  说明：本文件为「学术渊源」板块回字形（hui-tree）设计版本的独立存档，
+        含完整 CSS（含响应式）与 HTML 结构，可双击单独预览。
+        2026-08-27 用户决定删除首页回字形设计、保留线性传承时间轴，
+        故将本设计代码归档于此，以备后续复用或回溯。
+  ============================================================================
+-->
+<style>
+  :root{
+    /* 品牌色 Brand（暖阳橙 10 级） */
+    --brand-50:#FFF4EB; --brand-100:#FFE6D4; --brand-200:#FFCDA8; --brand-300:#FFAD78;
+    --brand-400:#FF8C42; --brand-500:#F2741B; --brand-600:#D85C12; --brand-700:#B2470F;
+    --brand-800:#8C380F; --brand-900:#6B2C0D;
+    /* 中性色 Neutral（暖调灰） */
+    --neutral-0:#FFFCF9; --neutral-100:#F2EBE2; --neutral-300:#D6C8B6;
+    --neutral-500:#998A74; --neutral-700:#5C5244; --neutral-900:#262019;
+    /* 语义色 */
+    --success:#2E9E6B; --warning:#E08A1E; --error:#D9533B; --info:#3E8E8A;
+    --accent-sage:#5CA99A;
+    /* 文本 / 背景 / 边框 */
+    --text-primary:#6B6155; --text-secondary:#6B6155; --text-tertiary:#998A74;
+    --bg:#FFFCF9; --line:#E5DDD0;
+    /* 字体族 */
+    --cjk:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    --mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    /* 阴影 3 档 */
+    --sh-sm:0 2px 4px rgba(42,29,15,.06);
+    --sh-md:0 4px 12px rgba(42,29,15,.08);
+    --sh-lg:0 12px 28px rgba(42,29,15,.12);
+    /* 兼容别名层 */
+    --paper:var(--bg);
+    --paper-2:var(--neutral-100);
+    --surface:var(--neutral-0);
+    --ink:var(--text-primary);
+    --ink-2:var(--text-secondary);
+    --ink-3:var(--text-tertiary);
+    --line-strong:var(--neutral-300);
+    --cinnabar:var(--brand-500);
+    --cinnabar-deep:var(--brand-600);
+    --cinnabar-soft:var(--brand-50);
+    --gold:var(--brand-300);
+    --gold-soft:var(--brand-100);
+    --ring:rgba(242,116,27,.45);
+    --shadow-sm:var(--sh-sm);
+    --shadow-md:var(--sh-md);
+    --shadow-lg:var(--sh-lg);
+    /* 渐变色系统 */
+    --grad-bg:radial-gradient(circle at 50% 0%, rgba(255,140,66,.13) 0%, transparent 55%);
+    --grad-brand:linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 50%, var(--brand-300) 130%);
+    --grad-text:linear-gradient(100deg, var(--brand-500) 0%, var(--brand-300) 100%);
+    --grad-hairline:linear-gradient(90deg, var(--brand-500) 0%, var(--brand-300) 55%, transparent 100%);
+    /* sage 青绿点缀 */
+    --sage-soft:color-mix(in oklch, var(--accent-sage) 15%, transparent);
+    --sage-deep:color-mix(in oklch, var(--accent-sage) 55%, var(--ink));
+    /* 字体 */
+    --font-display:var(--cjk);
+    --font-body:var(--cjk);
+    --font-mono:var(--mono);
+    /* 字号阶梯 */
+    --fs-display:clamp(2.4rem, 7vw, 4.2rem);
+    --fs-h1:clamp(1.6rem, 3.2vw, 2rem);
+    --fs-h2:clamp(1.25rem, 2.2vw, 1.5rem);
+    --fs-h3:1.125rem;
+    --fs-body:1rem;
+    --fs-sm:0.875rem;
+    --fs-xs:0.8125rem;
+    /* 间距 */
+    --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
+    --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px; --sp-9:96px;
+    --ease-out-quart:cubic-bezier(0.25,1,0.5,1);
+    --ease-out-expo:cubic-bezier(0.16,1,0.3,1);
+    --ease-in-out:cubic-bezier(0.65,0,0.35,1);
+    --radius:16px;
+    --radius-sm:8px;
+    --nav-h:62px;
+    --maxw:1160px;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--grad-bg),var(--paper-2);
+    color:var(--ink);
+    padding:40px 16px;
+  }
+  .archive-note{
+    max-width:1020px;margin:0 auto 28px;
+    font-size:13px;line-height:1.8;color:var(--ink-3);
+    border:1px dashed var(--line-strong);border-radius:var(--radius-sm);
+    padding:14px 18px;background:var(--paper);
+  }
+  .archive-note b{color:var(--brand-700)}
+
+  /* ============ 学术渊源（回字形时间线） · 完整 CSS ============ */
+  .hui-tree{max-width:min(1020px,100%);margin-inline:auto;position:relative}
+  /* 回字环：年代由外圈向中心递进（外早内晚），边框色阶收敛 */
+  .hui-ring{position:relative;border:1px solid var(--line);padding:clamp(20px,3.2vw,34px)}
+  .ring-1{border-color:color-mix(in oklch,var(--accent-sage) 16%,var(--line));border-radius:30px}
+  .ring-2{border-color:color-mix(in oklch,var(--accent-sage) 30%,var(--line));border-radius:24px}
+  .ring-3{border-color:color-mix(in oklch,var(--brand-500) 26%,var(--line));border-radius:20px}
+  .ring-4{border-color:color-mix(in oklch,var(--brand-500) 40%,var(--line));border-radius:16px}
+  .ring-core{border-color:color-mix(in oklch,var(--brand-500) 55%,var(--line));border-radius:14px;background:color-mix(in oklch,var(--brand-50) 45%,transparent)}
+  /* 年代刻度 + 阶段标签 */
+  .ring-year{position:absolute;top:-10px;left:clamp(14px,4vw,38px);padding:0 12px;background:var(--paper-2);font-family:var(--font-mono);font-size:var(--fs-xs);font-weight:500;letter-spacing:.12em;color:var(--accent-sage);white-space:nowrap}
+  .ring-tag{position:absolute;top:-9px;right:clamp(14px,4vw,38px);padding:0 12px;background:var(--paper-2);font-size:11px;letter-spacing:.2em;color:var(--ink-3);white-space:nowrap}
+  .ring-core .ring-year{color:var(--brand-500)}
+  /* 人物行 */
+  .hui-row{display:flex;justify-content:center;align-items:center;gap:clamp(18px,3vw,36px);flex-wrap:wrap}
+  .hui-person{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:var(--sp-3) var(--sp-4);border-radius:var(--radius-sm);transition:transform .25s var(--ease-out-quart),box-shadow .25s var(--ease-out-quart)}
+  .hui-person:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 10px 26px color-mix(in oklch,var(--cinnabar) 10%,transparent)}
+  .hp-name{font-family:var(--font-display);font-size:1.3rem;font-weight:700}
+  .hp-zi{font-size:.66em;font-weight:400;color:var(--ink-3);margin-left:2px}
+  .hp-year{font-family:var(--font-mono);font-size:.82rem;color:var(--accent-sage);letter-spacing:.08em}
+  .hp-book{font-size:var(--fs-xs);color:var(--sage-deep);background:var(--sage-soft);border:1px solid color-mix(in oklch,var(--accent-sage) 26%,var(--line));border-radius:999px;padding:3px 12px;line-height:1.5}
+  /* 核心（卢崇汉） */
+  .hp-core .hp-name{font-size:1.7rem;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hp-core .hp-zi{-webkit-text-fill-color:var(--ink-3)}
+  .hp-core .hp-book{background:var(--brand-50);border-color:color-mix(in oklch,var(--brand-500) 30%,var(--line));color:var(--brand-700)}
+  .hui-core-label{text-align:center;font-size:11px;letter-spacing:.3em;color:var(--ink-3);margin:var(--sp-4) 0 var(--sp-2)}
+  .hp-mini .hp-name{font-size:1.05rem}
+
+  /* ============ 响应式（原文件媒体查询中的回字形规则） ============ */
+  @media (max-width:1023px){
+    .hui-tree{max-width:880px}
+    .hui-ring{padding:clamp(16px,2.6vw,28px)}
+    .hp-name{font-size:1.2rem}
+  }
+  @media (max-width:767px){
+    .ring-1{border:none;padding:0;border-radius:0}
+    .hui-ring .hui-ring{border:1px solid color-mix(in oklch,var(--accent-sage) 24%,var(--line));border-left-width:3px;border-radius:var(--radius-sm);padding:var(--sp-4);margin-top:var(--sp-4)}
+    .ring-2{border-left-color:color-mix(in oklch,var(--accent-sage) 55%,var(--line))}
+    .ring-3{border-left-color:color-mix(in oklch,var(--brand-500) 35%,var(--line))}
+    .ring-4{border-left-color:color-mix(in oklch,var(--brand-500) 50%,var(--line))}
+    .ring-core{border-left-color:var(--brand-500);background:color-mix(in oklch,var(--brand-50) 40%,transparent)}
+    .ring-year{position:static;background:transparent;padding:0;display:inline-block;margin-right:var(--sp-3)}
+    .ring-tag{position:static;background:transparent;padding:0;display:inline-block;margin-left:2px}
+    .hui-person{padding:var(--sp-2)}
+    .hp-name{font-size:1.15rem}
+    .hp-core .hp-name{font-size:1.4rem}
+  }
+</style>
+</head>
+<body>
+
+  <div class="archive-note">
+    <b>回字形（同心圆）传承谱系 · 设计存档</b><br />
+    来源：扶阳中医馆官网 <code>index.html</code> · v3.0.0（2026-08-27）· WarmSun 暖阳设计系统。<br />
+    设计含义：由外圈向中心递进（外早内晚）呈现钦安卢氏医学五代传承，外圈刘沅（槐轩开宗）→ 郑钦安/颜龙臣（钦安立派）→ 卢铸之（发展为纯阳医学）→ 卢永定（承前启后）→ 核心卢崇汉（当代领军）及其入室弟子。<br />
+    状态：2026-08-27 已从首页移除，改以线性「传承时间轴」呈现；此文件为完整可预览的代码存档。
+  </div>
+
+  <!-- ============ 回字形谱系 HTML 结构（原 index.html 学术渊源板块） ============ -->
+  <div class="hui-tree">
+
+    <!-- 第一圈：刘沅 1767（槐轩开宗） -->
+    <div class="hui-ring ring-1 reveal">
+      <span class="ring-year">1767 – 1855</span>
+      <span class="ring-tag">槐轩开宗</span>
+      <div class="hui-row">
+        <div class="hui-person">
+          <h4 class="hp-name">刘沅<span class="hp-zi">字止唐</span></h4>
+          <span class="hp-year">1767 – 1855</span>
+          <span class="hp-book">《槐轩全书》·《医理大概约说》</span>
+        </div>
+      </div>
+
+      <!-- 第二圈：郑钦安、颜龙臣 1804–1908（钦安立派） -->
+      <div class="hui-ring ring-2 reveal" data-delay="1">
+        <span class="ring-year">1804 – 1908</span>
+        <span class="ring-tag">钦安立派</span>
+        <div class="hui-row">
+          <div class="hui-person">
+            <h4 class="hp-name">郑钦安<span class="hp-zi">名寿全</span></h4>
+            <span class="hp-year">1804 – 1901</span>
+            <span class="hp-book">《医理真传》《医法圆通》《伤寒恒论》</span>
+          </div>
+          <div class="hui-person">
+            <h4 class="hp-name">颜龙臣<span class="hp-zi">德阳人</span></h4>
+            <span class="hp-year">1808 – 1902</span>
+            <span class="hp-book">《素问恒解》《颜氏杂著》</span>
+          </div>
+        </div>
+
+        <!-- 第三圈：卢铸之 1876–1963（发展为纯阳医学） -->
+        <div class="hui-ring ring-3 reveal" data-delay="2">
+          <span class="ring-year">1876 – 1963</span>
+          <span class="ring-tag">发展为纯阳医学</span>
+          <div class="hui-row">
+            <div class="hui-person">
+              <h4 class="hp-name">卢铸之<span class="hp-zi">号金寿老人</span></h4>
+              <span class="hp-year">1876 – 1963</span>
+              <span class="hp-book">《卢氏药物配合阐述》《卢氏临证实验录》等</span>
+            </div>
+          </div>
+
+          <!-- 第四圈：卢永定 1901–1986（承前启后） -->
+          <div class="hui-ring ring-4 reveal" data-delay="3">
+            <span class="ring-year">1901 – 1986</span>
+            <span class="ring-tag">承前启后</span>
+            <div class="hui-row">
+              <div class="hui-person">
+                <h4 class="hp-name">卢永定<span class="hp-zi">字云龙</span></h4>
+                <span class="hp-year">1901 – 1986</span>
+                <span class="hp-book">《卢氏医学心法（续）》《卢氏临证实验录（续）》</span>
+              </div>
+            </div>
+
+            <!-- 核心：卢崇汉 1947–（当代领军）+ 入室弟子 -->
+            <div class="hui-ring ring-core reveal" data-delay="4">
+              <span class="ring-year">1947 – 今</span>
+              <span class="ring-tag">当代领军 · 卢门嫡传</span>
+              <div class="hui-row">
+                <div class="hui-person hp-core">
+                  <h4 class="hp-name">卢崇汉</h4>
+                  <span class="hp-year">1947 –</span>
+                  <span class="hp-book">《扶阳讲记》《扶阳论坛》</span>
+                </div>
+              </div>
+              <div class="hui-core-label">入室弟子 · 一脉相承</div>
+              <div class="hui-row">
+                <div class="hui-person hp-mini">
+                  <h4 class="hp-name">刘力红<span class="hp-zi">1958 –</span></h4>
+                  <span class="hp-book">《思考中医》</span>
+                </div>
+                <div class="hui-person hp-mini">
+                  <h4 class="hp-name">李耕<span class="hp-zi">1962 –</span></h4>
+                  <span class="hp-book">《七堂至明中医扶阳课》</span>
+                </div>
+                <div class="hui-person hp-mini">
+                  <h4 class="hp-name">刘方<span class="hp-zi">当代</span></h4>
+                  <span class="hp-book">承学临证</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
