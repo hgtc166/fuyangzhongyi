@@ -1,0 +1,7 @@
+# 项目内部记忆，不入库
+.workbuddy/
+# 历史版本快照，不发布
+versions/
+# OS / logs
+.DS_Store
+*.log
